@@ -1,5 +1,26 @@
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: lightcyan; }
+  .navigation .logo-container {
+    margin-left: 10px; }
+  .navigation .menu-list-container {
+    display: flex;
+    margin-right: 10px; }
+    .navigation .menu-list-container .menu-list {
+      display: flex;
+      justify-content: space-around;
+      list-style-type: none; }
+      .navigation .menu-list-container .menu-list .menu-list-item {
+        padding-left: 10px; }
+        .navigation .menu-list-container .menu-list .menu-list-item a {
+          text-decoration: none; }
+
 .productDescription {
   display: none; }
 
 .show {
   display: block; }
+
