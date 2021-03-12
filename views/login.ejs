@@ -1,0 +1,30 @@
+<h2>Login</h2>
+
+    <% if (err) { %>
+    <p class="loginErr"><%= err %></p>
+    <% } %>
+
+<form action="/login" method="post" class="loginForm">
+  <input
+    type="email"
+    name="email"
+    class="loginInput"
+    id=""
+    placeholder="email"
+  />
+  <input
+    type="password"
+    name="password"
+    class="loginInput"
+    id=""
+    placeholder="password"
+  />
+
+  <button type class="loginBtn" ="submit">Login</button>
+
+  <div class="loginText">
+    <span>Dont have account?</span>
+    <a href="/register" class="regLink">Register</a>
+    <a href="/reset" class="regLink">Forgot password?</a>
+  </div>
+</form>
