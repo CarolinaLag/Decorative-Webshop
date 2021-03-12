@@ -1,0 +1,14 @@
+<h2>Reset Mail</h2>
+
+    <% if (err) { %>
+    <p class="resetErr"><%= err %></p>
+    <% } %>
+<div class="checkMailContainer">
+    <div class="resetMailSent">
+      A reset password has been sent, please check your mail.
+      <div>
+        Did not receive any mail? Please press
+        <a href="/reset" class="resendLink">Resend</a>
+      </div>
+    </div>
+  </div>

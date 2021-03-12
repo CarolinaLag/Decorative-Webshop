@@ -1,0 +1,15 @@
+
+
+<form action="/reset" method="post">
+ 
+    <h2 class="resetHeading">Forgot your password?</h2>
+    <% if(err) { %>
+  
+      <div class="resetErr"><%= err %></div>
+  
+      <% } %>
+  <input type="email" name="email" id="" class="resetInput" placeholder="Enter your email">
+  
+  <button type="submit" class="resetBtn">Send link</button>
+  
+  </form>
