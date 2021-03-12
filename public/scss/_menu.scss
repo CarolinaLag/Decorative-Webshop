@@ -1,0 +1,24 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: lightcyan;
+  .logo-container {
+    margin-left: 10px;
+  }
+  .menu-list-container {
+    display: flex;
+    margin-right: 10px;
+    .menu-list {
+      display: flex;
+      justify-content: space-around;
+      list-style-type: none;
+      .menu-list-item {
+        padding-left: 10px;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
