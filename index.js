@@ -19,6 +19,8 @@ app.use("/", require("./routes/registerRoute"));
 
 app.use("/", require("./routes/resetRoute"));
 
+app.use("/", require("./routes/adminRoute"));
+
 
 const options = {
   useNewUrlParser: true,

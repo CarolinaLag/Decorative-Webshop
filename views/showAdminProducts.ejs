@@ -1,0 +1,16 @@
+<h2>Productlist</h2>
+
+<% products.forEach( product => { %>
+
+    <div>
+        <%=product.name %>
+    </div>
+
+    <div>
+        <%=product.price %>
+    </div>
+    <a href="/addToCart/<%=product.id%>">Add to cart</a>
+    
+    <div>_____________________</div>
+
+<% }) %>

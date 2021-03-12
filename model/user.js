@@ -6,8 +6,25 @@ const userSchema = new mongoose.Schema({
     password: {type: String, required: true},
     role: {type: String},
     token: String,
-  tokenExpiration: Date
+  tokenExpiration: Date,
+  shoppingCart: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "product",
+    },
+  ],
+  productList: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "product",
+    },
+  ],
 })
+
+userSchema.methods.addProductList = function (productId) {
+  this.productList.push(productId);
+  this.save();
+};
 
 const User = mongoose.model("user", userSchema);
 
