@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decorative</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+  </head>
+  <body>
+    <% products.forEach( product => { %>
+    <div class="productCard">
+      <div><%= product.name %></div>
+      <div><%= product.price %></div>
+      <div><i class="fas fa-shopping-cart"></i></div>
+      <div><i class="far fa-heart"></i></div>
+    </div>
+
+    <button value="<%= product._id %>" onclick="showDescription(this.value)">
+      Läs mer
+    </button>
+
+    <div class="productDescription" id="<%= product._id %>">
+      <%= product.description %>
+    </div>
+    <% }) %>
+  </body>
+</html>
+<script>
+  function showDescription(product) {
+    let productDescription = document.getElementById(product);
+
+    if (productDescription.classList.contains("show")) {
+      productDescription.classList.remove("show");
+    } else {
+      productDescription.classList.add("show");
+    }
+  }
+</script>

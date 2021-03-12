@@ -21,6 +21,7 @@ const userSchema = new mongoose.Schema({
   ],
 })
 
+
 userSchema.methods.addProductList = function (productId) {
   this.productList.push(productId);
   this.save();
