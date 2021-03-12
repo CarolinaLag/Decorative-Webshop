@@ -12,7 +12,11 @@ app.use(cookieParser());
 app.use("/static", express.static("public"));
 
 app.use("/", require("./routes/homeRoute"));
+
+app.use("/", require("./routes/loginRoute"));
+=======
 app.use("/", require("./routes/registerRoute"));
+
 
 const options = {
   useNewUrlParser: true,
