@@ -1,3 +1,4 @@
+
 .navigation {
   display: flex;
   flex-direction: row;
@@ -16,3 +17,10 @@
         padding-left: 10px; }
         .navigation .menu-list-container .menu-list .menu-list-item a {
           text-decoration: none; }
+
+.productDescription {
+  display: none; }
+
+.show {
+  display: block; }
+
