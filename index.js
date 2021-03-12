@@ -13,6 +13,7 @@ app.use(cookieParser())
 app.use("/static", express.static("public"));
 
 app.use("/", require("./routes/homeRoute"));
+app.use("/", require("./routes/loginRoute"));
 
 const options = {
     useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true,
