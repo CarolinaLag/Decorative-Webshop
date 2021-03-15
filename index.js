@@ -25,7 +25,7 @@ app.use("/", require("./routes/adminRoute"));
 
 app.use("/", require("./routes/logoutRoute"));
 
-
+app.use("/", require("./routes/cartRoute"));
 
 const options = {
   useNewUrlParser: true,
