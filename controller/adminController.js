@@ -3,7 +3,10 @@ const User = require("../model/user");
 require("dotenv").config();
 
 const addProductForm = async (req, res) => {
-    res.render("productForm.ejs", { err: " " });
+  const user = await User.findOne({ _id: req.user.user._id }).populate(
+    "productList"
+  );
+    res.render("productForm.ejs", {products: user.productList,  err: " " });
   };
 
   const addProductFormSubmit = async (req, res) => {
@@ -25,7 +28,7 @@ const addProductForm = async (req, res) => {
 
     console.log(user);
   
-    res.redirect("/showProducts");
+    res.redirect("/addProduct");
   };
 
 const showAdminProducts = async (req, res) => {
@@ -35,19 +38,35 @@ const showAdminProducts = async (req, res) => {
     );
     console.log(user.productList);
   
-    res.render("adminPage.ejs", { products: user.productList, err: " " });
+    res.render("productForm.ejs", { products: user.productList, err: " " });
   };
 
   const showProducts = async (req, res) => {
     const products = await Product.find();
   
-    res.render("showAdminProducts.ejs", { err: " ", products: products });
+    res.render("productView.ejs", { err: " ", products: products });
   };
 
+  const removeProduct = async (req, res) => {
+    const id = req.params.id;
+    const user = await User.findOne({ _id: req.user.user._id });
+   
+    try {
+      Product.findByIdAndRemove(id, (err) => {
+        user.productList.pull({ _id: id });
+        user.save();
+        if (err) return res.send(500, err);
+        res.redirect("/addProduct");
+      });
+    } catch (err) {
+      res.redirect("/addProduct");
+    }
+}
 
   module.exports = {
     addProductForm,
     addProductFormSubmit,
     showAdminProducts,
     showProducts,
+    removeProduct
   };

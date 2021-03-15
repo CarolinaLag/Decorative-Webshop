@@ -13,7 +13,6 @@ app.use("/static", express.static("public"));
 
 app.use("/", require("./routes/homeRoute"));
 
-
 app.use("/", require("./routes/productRoute"));
 
 app.use("/", require("./routes/loginRoute"));
@@ -23,6 +22,8 @@ app.use("/", require("./routes/registerRoute"));
 app.use("/", require("./routes/resetRoute"));
 
 app.use("/", require("./routes/adminRoute"));
+
+app.use("/", require("./routes/logoutRoute"));
 
 
 
