@@ -15,7 +15,11 @@
     <div class="productCard">
       <div><%= product.name %></div>
       <div><%= product.price %></div>
-      <div><i class="fas fa-shopping-cart"></i></div>
+      <div>
+        <a href="/addToCart/<%= product.id %>"
+          ><i class="fas fa-shopping-cart"></i
+        ></a>
+      </div>
       <div><i class="far fa-heart"></i></div>
     </div>
 
