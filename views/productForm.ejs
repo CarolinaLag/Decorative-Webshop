@@ -1,15 +1,27 @@
+<a href="/logout">Logout</a>
+
 <h2>Add Products</h2>
 
 <% if (err) { %>
-    <p class="addProductErr"><%= err %></p>
-    <% } %>
+<p class="addProductErr"><%= err %></p>
+<% } %>
 
 <form action="/addProduct" method="post">
+  <input type="text" name="name" placeholder="name" id="" />
+  <input type="text" name="description" placeholder="description" id="" />
+  <input type="number" name="price" placeholder="price" id="" />
 
-    <input type="text" name="name" placeholder="name" id="">
-    <input type="text" name="description" placeholder="description" id="">
-    <input type="number" name="price" placeholder="price" id="">
-    
-    <button type="submit">Add product</button>
-    
-    </form>
+  <button type="submit">Add product</button>
+</form>
+
+<h2>Admin Productlist</h2>
+
+<% products.forEach( product => { %>
+
+<div><%= product.name %></div>
+<div><%= product.description %></div>
+<div><%= product.price %></div>
+<a href="/addProduct/remove/<%= product._id %>" class="remove"> Delete </a>
+<div>___________________________________</div>
+
+<% }) %>
