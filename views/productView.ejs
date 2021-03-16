@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Decorative</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
-  </head>
-  <body>
-    <% products.forEach( product => { %>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decorative</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+</head>
+
+<body>
+  <% products.forEach( product=> { %>
     <div class="productCard">
-      <div><%= product.name %></div>
-      <div><%= product.price %></div>
       <div>
-        <a href="/addToCart/<%= product.id %>"
-          ><i class="fas fa-shopping-cart"></i
-        ></a>
+        <%= product.name %>
       </div>
-      <div><i class="far fa-heart"></i></div>
-    </div>
+      <div>
+        <%= product.price %>
+      </div>
+      <div>
+        <form action="/addToCart" method="post">
+          <input type="text" name="name" id="" value="<%= product.name %>" hidden>
+          <input type="number" name="quantity" id="" value="1" min="1">
+          <input type="text" name="productId" id="" value="<%= product._id %>" hidden>
+          <input type="number" name="price" id="" value="<%= product.price %>" hidden>
+          <button type="submit"><i class="fas fa-shopping-cart"></i></button>
+        </form>
 
-    <button value="<%= product._id %>" onclick="showDescription(this.value)">
-      Läs mer
-    </button>
 
-    <div class="productDescription" id="<%= product._id %>">
-      <%= product.description %>
-    </div>
-    <% }) %>
-  </body>
+
+        <div><i class="far fa-heart"></i></div>
+      </div>
+
+      <button value="<%= product._id %>" onclick="showDescription(this.value)">
+        Läs mer
+      </button>
+
+      <div class="productDescription" id="<%= product._id %>">
+        <%= product.description %>
+      </div>
+      <% }) %>
+</body>
+
 </html>
 <script>
   function showDescription(product) {

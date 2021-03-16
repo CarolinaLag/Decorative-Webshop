@@ -8,12 +8,12 @@ const userSchema = new mongoose.Schema({
   token: String,
   tokenExpiration: Date,
 
-  cartList: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "product",
-    },
-  ],
+  // cartList: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "product",
+  //   },
+  // ],
 
   productList: [
     {

@@ -2,14 +2,23 @@
 
 <div><a href="/products">Go back to products</a></div>
 
-<% cartItems.forEach( cartItem => { %>
+<% cartItems.forEach( cartItem=> { %>
 
-    <div class="productName"><%= cartItem.name %></div>
-    <div class="productDescription"><%= cartItem.description %></div>
-    <div class="productPrice"><%= cartItem.price %></div>
-<div>_________________________________</div>
+    <div class="productName">
+        <%= cartItem.name %>
+    </div>
+    <div class="productDescription">Qty: <%= cartItem.quantity%>
+    </div>
+    <div class="productPrice">
+        <%= cartItem.price %>
+    </div>
+    <div class="productPrice">
+        subtotal: <%= cartItem.subtotal %>
+    </div>
+
+    <div>_________________________________</div>
     <% }) %>
-
-    <div><a href="/checkout">Buy</a></div>
-
-    
+        <div>
+            total price: <%= totalPrice%>
+        </div>
+        <div><a href="/checkout">Buy</a></div>
