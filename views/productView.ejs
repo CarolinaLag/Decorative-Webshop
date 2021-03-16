@@ -10,6 +10,15 @@
 </head>
 
 <body>
+
+ <%- include("menu.ejs")%>
+    <%if (user){%>
+      <p>
+        Welcome <%= user.name%>
+      </p>
+      <%}%>
+
+        <h3>Our Products</h3>
   <% products.forEach( product=> { %>
     <div class="productCard">
       <div>
@@ -45,6 +54,8 @@
         <%= product.description %>
       </div>
       <% }) %>
+
+ 
 </body>
 
 </html>

@@ -37,7 +37,13 @@ const addProductForm = async (req, res) => {
   const user = await User.findOne({ _id: req.user.user._id }).populate(
     "productList"
   );
-  res.render("productForm.ejs", { products: user.productList, err: " " });
+
+  res.render("productForm.ejs", {
+    user: req.user.user,
+    products: user.productList,
+    err: " ",
+  });
+
 };
 
 const addProductFormSubmit = async (req, res) => {
@@ -49,10 +55,12 @@ const addProductFormSubmit = async (req, res) => {
 
   const product = await new Product({
     name: name,
+
     img: {
       data: fs.readFileSync(path.join("uploads/" + req.file.filename)),
       contentType: "image",
     },
+
     description: description,
     price: price,
   }).save();
@@ -72,8 +80,10 @@ const showAdminProducts = async (req, res) => {
   );
   console.log(user.productList);
 
+
   res.render("productForm.ejs", { products: user.productList, err: " " });
 };
+
 
 const showProducts = async (req, res) => {
   const products = await Product.find();
