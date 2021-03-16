@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,39 +16,43 @@
     <p>logged in as: <%=user.name%>
     </p>
 
+
     <h2>Add Products</h2>
 
     <% if (err) { %>
-      <p class="addProductErr">
-        <%= err %>
-      </p>
-      <% } %>
 
-        <form action="/addProduct" method="post">
-          <input type="text" name="name" placeholder="name" id="" />
-          <input type="text" name="description" placeholder="description" id="" />
-          <input type="number" name="price" placeholder="price" id="" />
+    <p class="addProductErr"><%= err %></p>
+    <% } %>
 
-          <button type="submit"><span class="fas fa-plus"></span></button>
-        </form>
+    <form action="/addProduct" method="post" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="name" id="" />
+      <input type="text" name="description" placeholder="description" id="" />
+      <input type="number" name="price" placeholder="price" id="" />
+      <input type="file" name="image" />
 
-        <h2>Admin Productlist</h2>
+      <button type="submit"><span class="fas fa-plus"></span></button>
+    </form>
 
-        <% products.forEach( product=> { %>
+    <h2>Admin Productlist</h2>
 
-          <div class="productName">
-            <%= product.name %>
-          </div>
-          <div class="productDescription">
-            <%= product.description %>
-          </div>
-          <div class="productPrice">
-            <%= product.price %>
-          </div>
-          <a href="/addProduct/edit/<%= product._id %>" class="edit"><span class="fas fa-edit"></span></a>
-          <a href="/addProduct/remove/<%= product._id %>" class="remove"> <span class="fas fa-trash"></span> </a>
-          <div>___________________________________</div>
+    <% products.forEach( product => { %>
 
-          <% }) %>
+    <div class="productName"><%= product.name %></div>
+    <div class="productImage">
+      <img
+        src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+      />
+    </div>
+    <div class="productDescription"><%= product.description %></div>
+    <div class="productPrice"><%= product.price %></div>
+    <a href="/addProduct/edit/<%= product._id %>" class="edit"
+      ><span class="fas fa-edit"></span
+    ></a>
+    <a href="/addProduct/remove/<%= product._id %>" class="remove">
+      <span class="fas fa-trash"></span>
+    </a>
+    <div>___________________________________</div>
 
-</body>
+    <% }) %>
+  </body>
+</html>
