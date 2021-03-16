@@ -63,10 +63,38 @@ const showAdminProducts = async (req, res) => {
     }
 }
 
+const editProduct = async (req, res) => {
+  const id = req.params.id;
+  const user = await User.findOne({_id: req.user.user._id})
+  const adminProducts = await user.productList;
+
+  try {
+    let data = await Product.find({_id: adminProducts})
+    res.render("productEdit.ejs",{ user: req.user.user, products: data, idProduct: id});
+  } catch (err) {
+    console.log(err)
+    res.redirect("/addProduct")
+  }
+}
+
+const postEdit = async (req, res) => {
+  const id = req.params.id;
+  try {
+    await Product.findByIdAndUpdate(id, { name: req.body.name, description: req.body.description, price: req.body.price })
+  res.redirect("/addProduct")
+  } catch (err) {
+    console.log(err)
+    res.redirect("/addProduct")
+  }
+}
+
+
   module.exports = {
     addProductForm,
     addProductFormSubmit,
     showAdminProducts,
     showProducts,
-    removeProduct
+    removeProduct,
+    editProduct,
+    postEdit
   };
