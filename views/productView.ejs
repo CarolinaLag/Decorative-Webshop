@@ -15,6 +15,11 @@
       <div>
         <%= product.name %>
       </div>
+      <div class="productImage">
+        <img
+          src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+        />
+      </div>
       <div>
         <%= product.price %>
       </div>

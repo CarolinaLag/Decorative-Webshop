@@ -11,37 +11,44 @@
     <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
   </head>
   <body>
+    <div><a href="/logout">Logout</a></div>
+    <div><a href="/products">Show productlist</a></div>
 
-<div><a href="/logout">Logout</a></div>
-<div><a href="/products">Show productlist</a></div>
+    <h2>Add Products</h2>
 
-<h2>Add Products</h2>
+    <% if (err) { %>
+    <p class="addProductErr"><%= err %></p>
+    <% } %>
 
-<% if (err) { %>
-<p class="addProductErr"><%= err %></p>
-<% } %>
+    <form action="/addProduct" method="post" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="name" id="" />
+      <input type="text" name="description" placeholder="description" id="" />
+      <input type="number" name="price" placeholder="price" id="" />
+      <input type="file" name="image" />
 
-<form action="/addProduct" method="post">
-  <input type="text" name="name" placeholder="name" id="" />
-  <input type="text" name="description" placeholder="description" id="" />
-  <input type="number" name="price" placeholder="price" id="" />
+      <button type="submit"><span class="fas fa-plus"></span></button>
+    </form>
 
-  <button type="submit"><span class="fas fa-plus"></span></button>
-</form>
+    <h2>Admin Productlist</h2>
 
-<h2>Admin Productlist</h2>
+    <% products.forEach( product => { %>
 
-<% products.forEach( product => { %>
+    <div class="productName"><%= product.name %></div>
+    <div class="productImage">
+      <img
+        src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+      />
+    </div>
+    <div class="productDescription"><%= product.description %></div>
+    <div class="productPrice"><%= product.price %></div>
+    <a href="/addProduct/edit/<%= product._id %>" class="edit"
+      ><span class="fas fa-edit"></span
+    ></a>
+    <a href="/addProduct/remove/<%= product._id %>" class="remove">
+      <span class="fas fa-trash"></span>
+    </a>
+    <div>___________________________________</div>
 
-<div class="productName"><%= product.name %></div>
-<div class="productDescription"><%= product.description %></div>
-<div class="productPrice"><%= product.price %></div>
-<a href="/addProduct/edit/<%= product._id %>" class="edit"><span class="fas fa-edit"></span></a>
-<a href="/addProduct/remove/<%= product._id %>" class="remove"> <span class="fas fa-trash"></span> </a>
-<div>___________________________________</div>
-
-<% }) %>
-
+    <% }) %>
   </body>
-
-
+</html>
