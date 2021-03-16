@@ -1,3 +1,3 @@
-exports.homeRender = (req, res) => {
-    res.render("home.ejs")
-}
+exports.homeRender = async (req, res) => {
+  res.render("home.ejs");
+};
