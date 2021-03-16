@@ -79,3 +79,33 @@ exports.showShoppingCart = async (req, res) => {
     console.log(err);
   }
 };
+
+exports.removeCartProduct = async (req, res) => {
+  const id = req.params.id;
+  const user = await User.findOne({ _id: req.user.user._id });
+  const userId = user;
+  const cart = await Cart.findOne({ userId })
+
+  const { price } = req.body;
+  const quantity = Number.parseInt(req.body.quantity);
+  const subtotal = price * quantity;
+  totalPrice = 0;
+  let totalSum = 0;
+
+  try {
+    Cart.findByIdAndRemove(id, (err) => {
+      cart.products.pull({ _id: id });
+      cart.save();
+
+      for (let i = 0; i < cart.products.length; i++) {
+        totalSum += cart.products[i].subtotal;
+        cart.totalPrice = totalSum;
+      }
+      if (err) return res.send(500, err);
+      res.redirect("/showShoppingCart");
+    });
+  } catch (err) {
+    res.redirect("/showShoppingCart");
+  }
+}
+
