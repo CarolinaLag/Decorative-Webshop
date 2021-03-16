@@ -1,24 +1,27 @@
-<h2>Shopping Cart</h2>
+<%- include("header.ejs")%>
+    <%- include ("menu.ejs")%>
 
-<div><a href="/products">Go back to products</a></div>
+        <h2>Shopping Cart</h2>
 
-<% cartItems.forEach( cartItem=> { %>
+        <div><a href="/products">Go back to products</a></div>
 
-    <div class="productName">
-        <%= cartItem.name %>
-    </div>
-    <div class="productDescription">Qty: <%= cartItem.quantity%>
-    </div>
-    <div class="productPrice">
-        <%= cartItem.price %>
-    </div>
-    <div class="productPrice">
-        subtotal: <%= cartItem.subtotal %>
-    </div>
+        <% cartItems.forEach( cartItem=> { %>
 
-    <div>_________________________________</div>
-    <% }) %>
-        <div>
-            total price: <%= totalPrice%>
-        </div>
-        <div><a href="/checkout">Buy</a></div>
+            <div class="productName">
+                <%= cartItem.name %>
+            </div>
+            <div class="productDescription">Qty: <%= cartItem.quantity%>
+            </div>
+            <div class="productPrice">
+                <%= cartItem.price %>
+            </div>
+            <div class="productPrice">
+                subtotal: <%= cartItem.subtotal %>
+            </div>
+
+            <div>_________________________________</div>
+            <% }) %>
+                <div>
+                    total price: <%= totalPrice%>
+                </div>
+                <div><a href="/checkout">Buy</a></div>

@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Product</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
-  </head>
-  <body>
 
-<div><a href="/logout">Logout</a></div>
-<div><a href="/products">Show productlist</a></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Product</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+</head>
 
-<h2>Add Products</h2>
+<body>
+  <%- include("menu.ejs")%>
 
-<% if (err) { %>
-<p class="addProductErr"><%= err %></p>
-<% } %>
+    <p>logged in as: <%=user.name%>
+    </p>
 
-<form action="/addProduct" method="post">
-  <input type="text" name="name" placeholder="name" id="" />
-  <input type="text" name="description" placeholder="description" id="" />
-  <input type="number" name="price" placeholder="price" id="" />
+    <h2>Add Products</h2>
 
-  <button type="submit"><span class="fas fa-plus"></span></button>
-</form>
+    <% if (err) { %>
+      <p class="addProductErr">
+        <%= err %>
+      </p>
+      <% } %>
 
-<h2>Admin Productlist</h2>
+        <form action="/addProduct" method="post">
+          <input type="text" name="name" placeholder="name" id="" />
+          <input type="text" name="description" placeholder="description" id="" />
+          <input type="number" name="price" placeholder="price" id="" />
 
-<% products.forEach( product => { %>
+          <button type="submit"><span class="fas fa-plus"></span></button>
+        </form>
 
-<div class="productName"><%= product.name %></div>
-<div class="productDescription"><%= product.description %></div>
-<div class="productPrice"><%= product.price %></div>
-<a href="/addProduct/edit/<%= product._id %>" class="edit"><span class="fas fa-edit"></span></a>
-<a href="/addProduct/remove/<%= product._id %>" class="remove"> <span class="fas fa-trash"></span> </a>
-<div>___________________________________</div>
+        <h2>Admin Productlist</h2>
 
-<% }) %>
+        <% products.forEach( product=> { %>
 
-  </body>
+          <div class="productName">
+            <%= product.name %>
+          </div>
+          <div class="productDescription">
+            <%= product.description %>
+          </div>
+          <div class="productPrice">
+            <%= product.price %>
+          </div>
+          <a href="/addProduct/edit/<%= product._id %>" class="edit"><span class="fas fa-edit"></span></a>
+          <a href="/addProduct/remove/<%= product._id %>" class="remove"> <span class="fas fa-trash"></span> </a>
+          <div>___________________________________</div>
 
+          <% }) %>
 
+</body>
