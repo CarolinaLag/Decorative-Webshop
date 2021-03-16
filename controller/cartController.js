@@ -1,15 +1,19 @@
-const Product = require("../model/product");
+// const Product = require("../model/product");
 const User = require("../model/user");
 const Cart = require("../model/cart");
 
 exports.addToCart = async (req, res) => {
-  const { productId, quantity, name, price } = req.body;
+  const { productId, name, price } = req.body;
+  const quantity = Number.parseInt(req.body.quantity);
   const user = await User.findOne({ _id: req.user.user._id });
   const userId = user;
-
+  const subtotal = price * quantity;
+  totalPrice = 0;
+  let newtotal = subtotal;
+  let totalSum = 0;
+  console.log(quantity);
+  let cart = await Cart.findOne({ userId });
   try {
-    let cart = await Cart.findOne({ userId });
-
     if (cart) {
       //cart exists for user
       let itemIndex = cart.products.findIndex((p) => p.productId == productId);
@@ -17,22 +21,41 @@ exports.addToCart = async (req, res) => {
       if (itemIndex > -1) {
         //product exists in the cart, update the quantity
         let productItem = cart.products[itemIndex];
-        productItem.quantity = quantity;
+        productItem.quantity += quantity;
         cart.products[itemIndex] = productItem;
+
+        cart.products[itemIndex].subtotal =
+          cart.products[itemIndex].quantity * price;
+
+        for (let i = 0; i < cart.products.length; i++) {
+          totalSum += cart.products[i].subtotal;
+          cart.totalPrice = totalSum;
+          // console.log(totalSum);
+        }
       } else {
+        for (let i = 0; i < cart.products.length; i++) {
+          newtotal += cart.products[i].subtotal;
+          cart.totalPrice = newtotal;
+          // console.log(totalSum);
+        }
         //product does not exists in cart, add new item
-        cart.products.push({ productId, quantity, name, price });
+        cart.products.push({ productId, quantity, name, price, subtotal });
       }
+
       cart = await cart.save();
-      // return res.status(201).send(cart);
       res.redirect("/showShoppingCart");
     } else {
-      //no cart for user, create new cart
       await Cart.create({
         userId,
-        products: [{ productId, quantity, name, price }],
+        products: [{ productId, quantity, name, price, subtotal }],
+        totalPrice: newtotal,
       });
-      // return res.status(201).send(newCart);
+      let cart = await Cart.findOne({ userId });
+      for (let i = 0; i < cart.products.length; i++) {
+        newtotal += cart.products[i].subtotal;
+        cart.totalPrice = newtotal;
+        // console.log(totalSum);
+      }
       res.redirect("/showShoppingCart");
     }
   } catch (err) {
@@ -50,7 +73,7 @@ exports.showShoppingCart = async (req, res) => {
     res.render("cart.ejs", {
       cartItems: cart.products,
       user: req.user.user,
-      // totalAmount: cart.totalAmount,
+      totalPrice: cart.totalPrice,
     });
   } catch (err) {
     console.log(err);
