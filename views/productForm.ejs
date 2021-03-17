@@ -40,7 +40,7 @@
     <div class="productName"><%= product.name %></div>
     <div class="productImage">
       <img
-        src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+        src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="Could not upload image" height="200px" width=100px
       />
     </div>
     <div class="productDescription"><%= product.description %></div>
