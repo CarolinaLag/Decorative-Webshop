@@ -1,4 +1,4 @@
-// const Product = require("../model/product");
+const Product = require("../model/product");
 const User = require("../model/user");
 const Cart = require("../model/cart");
 
@@ -11,7 +11,7 @@ exports.addToCart = async (req, res) => {
   totalPrice = 0;
   let newtotal = subtotal;
   let totalSum = 0;
-  console.log(quantity);
+  //console.log(quantity);
   let cart = await Cart.findOne({ userId });
   try {
     if (cart) {
@@ -33,13 +33,13 @@ exports.addToCart = async (req, res) => {
           // console.log(totalSum);
         }
       } else {
+        
+        cart.products.push({ productId, quantity, name, price, subtotal });
         for (let i = 0; i < cart.products.length; i++) {
-          newtotal += cart.products[i].subtotal;
-          cart.totalPrice = newtotal;
+          totalSum += cart.products[i].subtotal;
+          cart.totalPrice = totalSum;
           // console.log(totalSum);
         }
-        //product does not exists in cart, add new item
-        cart.products.push({ productId, quantity, name, price, subtotal });
       }
 
       cart = await cart.save();
@@ -69,7 +69,7 @@ exports.showShoppingCart = async (req, res) => {
   const userId = user;
   try {
     const cart = await Cart.findOne({ userId }).populate("userId");
-
+    
     res.render("cart.ejs", {
       cartItems: cart.products,
       user: req.user.user,
@@ -94,13 +94,18 @@ exports.removeCartProduct = async (req, res) => {
 
   try {
     Cart.findByIdAndRemove(id, (err) => {
-      cart.products.pull({ _id: id });
-      cart.save();
-
+      cart.products.pull({ _id: id }); 
+      
       for (let i = 0; i < cart.products.length; i++) {
+        console.log(cart.products.length)
         totalSum += cart.products[i].subtotal;
         cart.totalPrice = totalSum;
       }
+      if (cart.products == "") {
+        cart.totalPrice = totalSum;
+        console.log(cart.products)
+      }
+      cart.save();
       if (err) return res.send(500, err);
       res.redirect("/showShoppingCart");
     });
