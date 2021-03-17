@@ -5,6 +5,6 @@ exports.renderProducts = async (req, res) => {
 
   res.render("productView.ejs", {
     products: products,
-    user: req.user.user,
+   
   });
 };

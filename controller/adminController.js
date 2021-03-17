@@ -1,37 +1,8 @@
-const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const Product = require("../model/product");
 const User = require("../model/user");
 require("dotenv").config();
-
-const imgUpload = async (req, res) => {
-  const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, "uploads");
-    },
-    filename: (req, file, cb) => {
-      cb(null, file.fieldname + "_" + Date.now());
-    },
-  });
-
-  const upload = multer({
-    storage: storage,
-    fileFilter: (req, file, callback) => {
-      const ext = path.extname(file.originalname);
-      if (
-        ext !== ".png" &&
-        ext !== ".jpg" &&
-        ext !== ".gif" &&
-        ext !== ".jpeg"
-      ) {
-        return callback(console.log(new Error("Wrong file type")));
-      }
-      callback(null, true);
-    },
-  });
-  res.redirect("/addProduct");
-};
 
 const addProductForm = async (req, res) => {
   const user = await User.findOne({ _id: req.user.user._id }).populate(
@@ -43,7 +14,6 @@ const addProductForm = async (req, res) => {
     products: user.productList,
     err: " ",
   });
-
 };
 
 const addProductFormSubmit = async (req, res) => {
@@ -80,10 +50,8 @@ const showAdminProducts = async (req, res) => {
   );
   console.log(user.productList);
 
-
   res.render("productForm.ejs", { products: user.productList, err: " " });
 };
-
 
 const showProducts = async (req, res) => {
   const products = await Product.find();
