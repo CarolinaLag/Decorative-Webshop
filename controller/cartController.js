@@ -77,6 +77,7 @@ exports.showShoppingCart = async (req, res) => {
     });
   } catch (err) {
     console.log(err);
+    res.redirect("back")
   }
 };
 
