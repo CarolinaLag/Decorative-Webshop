@@ -50,3 +50,4 @@ exports.renderProducts = async (req, res) => {
   }
 
 };
+}
