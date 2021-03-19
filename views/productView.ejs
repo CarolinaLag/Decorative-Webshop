@@ -37,7 +37,9 @@
             <button type="submit"><i class="fas fa-shopping-cart"></i></button>
           </form>
 
-          <div><i class="far fa-heart"></i></div>
+          <div>
+            <a href="/wishlist/<%= product._id %>"><i class="far fa-heart"></i></a>
+          </div>
         </div>
 
         <button value="<%= product._id %>" onclick="showDescription(this.value)">
