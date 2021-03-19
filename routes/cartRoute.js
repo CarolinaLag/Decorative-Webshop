@@ -6,6 +6,10 @@ const verifyUser = require("../middleware/verifyUser");
 
 router.get("/showShoppingCart", verifyUser, cartController.showShoppingCart);
 router.post("/addToCart", verifyUser, cartController.addToCart);
-router.get("/showShoppingCart/remove/:id", verifyUser, cartController.removeCartProduct);
+router.get(
+  "/showShoppingCart/remove/:id",
+  verifyUser,
+  cartController.removeCartProduct
+);
 
 module.exports = router;
