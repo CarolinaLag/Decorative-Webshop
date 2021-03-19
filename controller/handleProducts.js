@@ -1,5 +1,5 @@
-const Product = require('../model/product');
-const User = require('../model/user');
+const Product = require("../model/product");
+const User = require("../model/user");
 
 exports.renderProducts = async (req, res) => {
   const page = +req.query.page || 1;
@@ -14,7 +14,7 @@ exports.renderProducts = async (req, res) => {
       let products = await Product.find({})
         .limit(dataToShow)
         .sort({ price: sorted });
-      res.render('productView.ejs', {
+      res.render("productView.ejs", {
         products: products,
         currentPage: page,
         page,
@@ -29,7 +29,7 @@ exports.renderProducts = async (req, res) => {
         .limit(2)
         .skip((page - 1) * 2)
         .sort({ price: sorted });
-      res.render('productView.ejs', {
+      res.render("productView.ejs", {
         products: products,
         currentPage: page,
         page,
@@ -41,6 +41,6 @@ exports.renderProducts = async (req, res) => {
       });
     }
   } catch (err) {
-    res.redirect('/');
+    res.redirect("/");
   }
 };

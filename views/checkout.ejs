@@ -1,0 +1,25 @@
+<% if (cartItems.lenght == 0 ) { %>
+<span>Your cart is empty. <a href="/products">Back to product page</a></span>
+<% } %> <% cartItems.forEach( cartItem=> { %>
+
+<div class="productName">Produkt: <%= cartItem.name %></div>
+<div class="productQty">Antal: <%= cartItem.quantity%></div>
+<div class="productPrice">Pris: <%= cartItem.price %></div>
+<div class="productPrice">Subtotal: <%= cartItem.subtotal %></div>
+
+<div>_________________________________</div>
+<% }) %>
+<div>Total price: <%= totalPrice%></div>
+
+<button class="checkout" type="submit">To payment</button>
+
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+  var stripe = Stripe(
+    "pk_test_51ILliiBRbWPcHLxe7D73iKWi40Ne50lYQCULNORVICGOovVU4qbcUJcJyGfmEWpr5qMlR7mGwsxh3P0EyOvlHhxX00GrkJbzN2"
+  );
+  document.querySelector(".checkout").addEventListener("click", () => {
+    stripe.redirectToCheckout({ sessionId: "<%=sessionId %>" });
+  });
+</script>
