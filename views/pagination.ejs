@@ -1,6 +1,7 @@
 <div class="pagination">
  
   <% if(typeof totalPages !== undefined ) { %>
+    <% if(totalPages !== dataToShow/taskPerReq) { %>
    
 
   <a href="/products/?page=<%=(dataToShow/taskPerReq)+1%>" class="page"
@@ -11,5 +12,5 @@
   <a href="/products/?page=<%=(dataToShow/taskPerReq)-1%>" class="page"
     >Back <i class="fas fa-arrow-alt-circle-left"></i></a>
 
-  <% } %>
+  <% }} %>
 </div>
