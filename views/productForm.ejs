@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+  </head>
 
+  <body>
+    <%- include("menu.ejs")%>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add Product</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
-</head>
-
-<body>
-  <%- include("menu.ejs")%>
-
-    <p>logged in as: <%=user.name%>
-    </p>
-
+    <p>logged in as: <%=user.name%></p>
 
     <h2>Add Products</h2>
 
@@ -28,7 +27,7 @@
       <input type="text" name="name" placeholder="name" id="" />
       <input type="text" name="description" placeholder="description" id="" />
       <input type="number" name="price" placeholder="price" id="" />
-      <input type="file" name="image" />
+      <input type="file" name="image" placeholder="image" id="" />
 
       <button type="submit"><span class="fas fa-plus"></span></button>
     </form>
@@ -40,7 +39,10 @@
     <div class="productName"><%= product.name %></div>
     <div class="productImage">
       <img
-        src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="Could not upload image" height="200px" width=100px
+        src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+        alt="Could not upload image"
+        height="200px"
+        width="100px"
       />
     </div>
     <div class="productDescription"><%= product.description %></div>

@@ -18,6 +18,28 @@
 
     <h3>Our Products</h3>
 
+    <% products.forEach( product=> { %>
+      <div class="productCard">
+        <div>
+          <%= product.name %>
+        </div>
+        <div class="productImage">
+          <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+            alt="Could not upload image" height="200px" width="100px" />
+        </div>
+        <div>
+          <%= product.price %>
+        </div>
+        <div>
+          <form action="/addToCart" method="post">
+            <input type="text" name="name" id="" value="<%= product.name %>" hidden>
+            <input type="number" name="quantity" id="" value="1" min="1">
+            <input type="text" name="productId" id="" value="<%= product._id %>" hidden>
+            <input type="number" name="price" id="" value="<%= product.price %>" hidden>
+            <button type="submit"><i class="fas fa-shopping-cart"></i></button>
+          </form>
+
+
 
           <div>
             <a href="/wishlist/<%= product._id %>"><i class="far fa-heart"></i></a>
