@@ -46,6 +46,11 @@ router.get("/products", verifyUser, verifyAdmin, showProducts);
 router.get("/addProduct", verifyAdmin, showAdminProducts);
 router.get("/addProduct/remove/:id", verifyAdmin, removeProduct);
 router.get("/addProduct/edit/:id", verifyAdmin, editProduct);
-router.post("/addProduct/edit/:id", verifyAdmin, postEdit);
+router.post(
+  "/addProduct/edit/:id",
+  verifyAdmin,
+  upload.single("image"),
+  postEdit
+);
 
 module.exports = router;

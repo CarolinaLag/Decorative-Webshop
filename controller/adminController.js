@@ -95,9 +95,14 @@ const editProduct = async (req, res) => {
 
 const postEdit = async (req, res) => {
   const id = req.params.id;
+
   try {
     await Product.findByIdAndUpdate(id, {
       name: req.body.name,
+      img: {
+        data: fs.readFileSync(path.join("uploads/" + req.file.filename)),
+        contentType: "image",
+      },
       description: req.body.description,
       price: req.body.price,
     });
