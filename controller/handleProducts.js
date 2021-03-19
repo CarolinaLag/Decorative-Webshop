@@ -1,15 +1,5 @@
-
 const Product = require('../model/product');
-
-exports.renderProducts = async (req, res) => {
-  const products = await Product.find({});
-
-  res.render('productView.ejs', {
-    products: products,
-  });
-
-const Product = require("../model/product");
-const User = require("../model/user");
+const User = require('../model/user');
 
 exports.renderProducts = async (req, res) => {
   const page = +req.query.page || 1;
@@ -18,11 +8,13 @@ exports.renderProducts = async (req, res) => {
   const totalPages = Math.ceil(totalData / taskPerReq);
   const dataToShow = taskPerReq * page;
   const sorted = +req.query.sorted || 1;
-  
+
   try {
-    if (page === 1 ) {
-      let products = await Product.find({}).limit(dataToShow).sort({ price: sorted });
-      res.render("productView.ejs", {
+    if (page === 1) {
+      let products = await Product.find({})
+        .limit(dataToShow)
+        .sort({ price: sorted });
+      res.render('productView.ejs', {
         products: products,
         currentPage: page,
         page,
@@ -33,8 +25,11 @@ exports.renderProducts = async (req, res) => {
         sorted,
       });
     } else {
-      let products = await Product.find({}).limit(2).skip((page -1) * 2).sort({price: sorted});
-      res.render("productView.ejs", { 
+      let products = await Product.find({})
+        .limit(2)
+        .skip((page - 1) * 2)
+        .sort({ price: sorted });
+      res.render('productView.ejs', {
         products: products,
         currentPage: page,
         page,
@@ -46,8 +41,6 @@ exports.renderProducts = async (req, res) => {
       });
     }
   } catch (err) {
-    res.redirect("/")
+    res.redirect('/');
   }
-
 };
-}
