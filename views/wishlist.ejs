@@ -1,0 +1,51 @@
+<%- include("header.ejs")%>
+
+  <body>
+    <%- include("menu.ejs")%>
+
+      <h1>Wishlist</h1>
+      <% products.forEach(product=> { %>
+        <div class="productCard">
+          <div>
+            <%= product.name %>
+          </div>
+          <div class="productImage">
+            <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+              alt="Could not upload image" height="200px" width=100px />
+          </div>
+          <div>
+            <%= product.price %>
+          </div>
+          <div>
+            <form action="/addToCart" method="post">
+              <input type="text" name="name" id="" value="<%= product.name %>" hidden>
+              <input type="number" name="quantity" id="" value="1" min="1">
+              <input type="text" name="productId" id="" value="<%= product._id %>" hidden>
+              <input type="number" name="price" id="" value="<%= product.price %>" hidden>
+              <button type="submit">Lägg till <i class="fas fa-shopping-cart"></i></button>
+            </form>
+
+            <a href="/wishlist/delete/<%= product.id %>">Ta bort</a>
+            <button value="<%= product._id %>" onclick="showDescription(this.value)">
+              Läs mer
+            </button>
+
+            <div class="productDescription" id="<%= product._id %>">
+              <%= product.description %>
+            </div>
+
+
+            <% }) %>
+
+              <script>
+                function showDescription(product) {
+                  let productDescription = document.getElementById(product);
+
+                  if (productDescription.classList.contains("show")) {
+                    productDescription.classList.remove("show");
+                  } else {
+                    productDescription.classList.add("show");
+                  }
+                }
+              </script>
+  </body>

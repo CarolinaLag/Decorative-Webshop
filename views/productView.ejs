@@ -18,7 +18,14 @@
 
     <h3>Our Products</h3>
 
+
+          <div>
+            <a href="/wishlist/<%= product._id %>"><i class="far fa-heart"></i></a>
+          </div>
+        </div>
+
     <%- include("./sortProducts.ejs") %> <% products.forEach( product=> { %>
+
 
     <div class="productCard">
       <div><%= product.name %></div>
