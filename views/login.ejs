@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
-  </head>
-  <body>
 
-<%- include("header.ejs")%>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+</head>
 
-  <%- include("menu.ejs")%>
+<body>
 
-    <h2>Login</h2>
+  <%- include("header.ejs")%>
 
-    <% if (err) { %>
-      <p class="loginErr">
-        <%= err %>
-      </p>
-      <% } %>
+    <%- include("menu.ejs")%>
 
-        <form action="/login" method="post" class="loginForm">
-          <input type="email" name="email" class="loginInput" id="" placeholder="email" />
-          <input type="password" name="password" class="loginInput" id="" placeholder="password" />
+      <h2>Login</h2>
 
-          <button type class="loginBtn"="submit"><i class="far fa-user"></i>Login</button>
+      <% if (err) { %>
+        <p class="loginErr">
+          <%= err %>
+        </p>
+        <% } %>
 
-          <div class="loginText">
-            <span>Dont have account?</span>
-            <a href="/register" class="regLink">Register</a>
-            <a href="/reset" class="regLink">Forgot password?</a>
-          </div>
-        </form>
+          <%- include("message.ejs")%>
 
-  </body>
+            <form action="/login" method="post" class="loginForm">
+              <input type="email" name="email" class="loginInput" id="" placeholder="email" />
+              <input type="password" name="password" class="loginInput" id="" placeholder="password" />
+
+              <button type class="loginBtn"="submit"><i class="far fa-user"></i>Login</button>
+
+              <div class="loginText">
+                <span>Dont have account?</span>
+                <a href="/register" class="regLink">Register</a>
+                <a href="/reset" class="regLink">Forgot password?</a>
+              </div>
+            </form>
+
+</body>

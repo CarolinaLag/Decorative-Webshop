@@ -40,7 +40,7 @@ const addProductFormSubmit = async (req, res) => {
   user.addProductList(product._id);
 
   console.log(user);
-
+  req.flash('success_msg', 'Prodduct added to list');
   res.redirect('/addProduct');
 };
 
@@ -72,6 +72,7 @@ const removeProduct = async (req, res) => {
       user.productList.pull({ _id: id });
       user.save();
       if (err) return res.send(500, err);
+      req.flash('success_msg', 'Product removed from list');
       res.redirect('/addProduct');
     });
   } catch (err) {
@@ -104,12 +105,13 @@ const postEdit = async (req, res) => {
     await Product.findByIdAndUpdate(id, {
       name: req.body.name,
       img: {
-        data: fs.readFileSync(path.join("uploads/" + req.file.filename)),
-        contentType: "image",
+        data: fs.readFileSync(path.join('uploads/' + req.file.filename)),
+        contentType: 'image',
       },
       description: req.body.description,
       price: req.body.price,
     });
+    req.flash('success_msg', 'Product updated');
     res.redirect('/addProduct');
   } catch (err) {
     console.log(err);
