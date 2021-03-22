@@ -10,13 +10,14 @@
     />
     <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
   </head>
+
   <body>
     <div><a href="/logout">Logout</a></div>
     <div><a href="/products">Show productlist</a></div>
 
     <h2>Admin Productlist</h2>
-
-    <% products.forEach( product => { %> <% if (product._id == idProduct) { %>
+    <%- include("message.ejs")%> <% products.forEach( product=> { %> <% if
+    (product._id==idProduct) { %>
 
     <form
       action="/addProduct/edit/<%= product._id %>"
@@ -52,7 +53,7 @@
         minlength="1"
         value="<%= product.price %>"
       />
-      <input type="file" name="image" />
+      <input type="file" name="image" required />
       <button type="submit"><span class="fas fa-check fa-lg"></span></button>
       <a href="/addProduct"><span class="fas fa-window-close fa-lg"></span></a>
       <div>___________________________________</div>

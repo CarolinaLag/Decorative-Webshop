@@ -15,6 +15,7 @@
     <%- include("menu.ejs")%>
 
     <p>logged in as: <%=user.name%></p>
+    <%-include("message.ejs")%>
 
     <h2>Add Products</h2>
 
@@ -27,14 +28,14 @@
       <input type="text" name="name" placeholder="name" id="" />
       <input type="text" name="description" placeholder="description" id="" />
       <input type="number" name="price" placeholder="price" id="" />
-      <input type="file" name="image" placeholder="image" id="" />
+      <input type="file" name="image" placeholder="image" id="" required />
 
       <button type="submit"><span class="fas fa-plus"></span></button>
     </form>
 
     <h2>Admin Productlist</h2>
 
-    <% products.forEach( product => { %>
+    <% products.forEach( product=> { %>
 
     <div class="productName"><%= product.name %></div>
     <div class="productImage">

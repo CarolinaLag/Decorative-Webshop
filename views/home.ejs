@@ -15,9 +15,12 @@
   <body>
     <%- include("menu.ejs")%>
     <section class="homeSection">
+
       <div class="loginLinkContainer">
         <a href="/login" class="loginLink"><i class="far fa-user"></i>Log in</a>
+         <%- include("message.ejs")%>
       </div>
+       
       <div class="introduction">
         <p class="introText">
           Be inspired by our collection of the best home decors. We
@@ -35,6 +38,7 @@
           <a href="/products" class="showProductsLink">Products</a>
         </div>
       </div>
+
     </section>
   </body>
 </html>
