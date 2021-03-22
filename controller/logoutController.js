@@ -1,3 +1,5 @@
-exports.logout = (req, res) => {
+
+
+exports.logout =  (req, res) => {
   res.clearCookie("jwtToken").redirect("/");
 };
