@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: lightcyan;
+  background-color: black;
+  opacity: 0.7;
   height: 50px;
   .logo-container {
     margin-left: 10px;
@@ -23,4 +24,3 @@
     }
   }
 }
-
