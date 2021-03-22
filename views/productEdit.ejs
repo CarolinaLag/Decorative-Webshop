@@ -1,73 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Product</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
-  </head>
-  <body>
-    <div><a href="/logout">Logout</a></div>
-    <div><a href="/products">Show productlist</a></div>
 
-    <h2>Admin Productlist</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Product</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+</head>
 
-    <% products.forEach( product => { %> <% if (product._id == idProduct) { %>
+<body>
+  <div><a href="/logout">Logout</a></div>
+  <div><a href="/products">Show productlist</a></div>
 
-    <form
-      action="/addProduct/edit/<%= product._id %>"
-      method="post"
-      enctype="multipart/form-data"
-    >
-      <input
-        type="text"
-        name="name"
-        placeholder="name"
-        id=""
-        required
-        minlength="1"
-        maxlength="35"
-        value="<%= product.name %>"
-      />
-      <input
-        type="text"
-        name="description"
-        placeholder="description"
-        id=""
-        required
-        minlength="1"
-        maxlength="35"
-        value="<%= product.description %>"
-      />
-      <input
-        type="number"
-        name="price"
-        placeholder="price"
-        id=""
-        required
-        minlength="1"
-        value="<%= product.price %>"
-      />
-      <input type="file" name="image" />
-      <button type="submit"><span class="fas fa-check fa-lg"></span></button>
-      <a href="/addProduct"><span class="fas fa-window-close fa-lg"></span></a>
-      <div>___________________________________</div>
-    </form>
-    <% } else { %>
-    <div class="productName"><%= product.name %></div>
-    <div class="productDescription"><%= product.description %></div>
-    <div class="productPrice"><%= product.price %></div>
-    <a href="/addProduct/edit/<%= product._id %>" class="edit"
-      ><span class="fas fa-edit"></span
-    ></a>
-    <a href="/addProduct/remove/<%= product._id %>" class="remove">
-      <span class="fas fa-trash"></span>
-    </a>
+  <h2>Admin Productlist</h2>
+  <%- include("message.ejs")%>
 
-    <% } %> <% }) %>
-  </body>
+    <% products.forEach( product=> { %> <% if (product._id==idProduct) { %>
+
+        <form action="/addProduct/edit/<%= product._id %>" method="post" enctype="multipart/form-data">
+          <input type="text" name="name" placeholder="name" id="" required minlength="1" maxlength="35"
+            value="<%= product.name %>" />
+          <input type="text" name="description" placeholder="description" id="" required minlength="1" maxlength="35"
+            value="<%= product.description %>" />
+          <input type="number" name="price" placeholder="price" id="" required minlength="1"
+            value="<%= product.price %>" />
+          <input type="file" name="image" />
+          <button type="submit"><span class="fas fa-check fa-lg"></span></button>
+          <a href="/addProduct"><span class="fas fa-window-close fa-lg"></span></a>
+          <div>___________________________________</div>
+        </form>
+        <% } else { %>
+          <div class="productName">
+            <%= product.name %>
+          </div>
+          <div class="productDescription">
+            <%= product.description %>
+          </div>
+          <div class="productPrice">
+            <%= product.price %>
+          </div>
+          <a href="/addProduct/edit/<%= product._id %>" class="edit"><span class="fas fa-edit"></span></a>
+          <a href="/addProduct/remove/<%= product._id %>" class="remove">
+            <span class="fas fa-trash"></span>
+          </a>
+
+          <% } %>
+            <% }) %>
+</body>
+
 </html>

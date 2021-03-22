@@ -22,6 +22,7 @@ exports.wishListAdd = async (req, res) => {
 
     user.addWish(productId, user);
 
+    req.flash('success_msg', 'Product added to wishlist');
     res.redirect('back');
   } catch (err) {
     console.log(err);
@@ -37,6 +38,7 @@ exports.deleteWish = async (req, res) => {
     user.wishList.pull({ _id: wishId });
 
     user.save();
+    req.flash('success_msg', 'Product removed from wishlist');
     res.redirect('/wishlist');
   } catch (err) {
     console.log(err);
