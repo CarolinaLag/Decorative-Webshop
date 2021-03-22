@@ -1,4 +1,3 @@
-
 .navigation {
   display: flex;
   flex-direction: row;
@@ -24,3 +23,5 @@
 .show {
   display: block; }
 
+body {
+  background-color: blue; }
