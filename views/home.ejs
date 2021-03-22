@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
-</head>
-
-<body>
-  <%- include("menu.ejs")%>
+  <body>
+    <%- include("menu.ejs")%>
     <section class="homeSection">
-      <%- include("message.ejs")%>
 
-        <div class="loginRegHomeContainer">
-          <div class="registerLinkContainer">
+      <div class="loginLinkContainer">
+        <a href="/login" class="loginLink"><i class="far fa-user"></i>Log in</a>
+         <%- include("message.ejs")%>
+      </div>
+       
+      <div class="introduction">
+        <p class="introText">
+          Be inspired by our collection of the best home decors. We
+          offer a wide range of beautiful and practical objects. If you are
+          looking for accessories for your home rather than large investment
+          pieces, take a peek and look through our decor products.
+        </p>
+      </div>
 
-          </div>
-
-
-          
-
-        <div class="loginHome">
-          <a href="/login" class="loginLink"><i class="far fa-user"></i>Log in</a>
+      <div class="homeContainer">
+        <div class="welcomeContainer">
+          <h1 class="welcomeText">Welcome to Decorative</h1>
         </div>
+        <div class="showProductsContainer">
+          <a href="/products" class="showProductsLink">Products</a>
+        </div>
+      </div>
 
-        <div class="homeContainer">
-
-
-            <h1 class="welcomeText">Welcome to Decorative</h1>
-          </div>
     </section>
-</body>
+  </body>
+</html>

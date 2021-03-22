@@ -1,5 +1,87 @@
 @import "menu.scss";
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.homeSection {
+  background-color: rgb(233, 230, 217);
+  height: 100vh;
+  .loginLinkContainer {
+    background-color: black;
+    opacity: 0.7;
+    padding: 20px;
+    .loginLink {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      &:hover {
+        background: rgb(202, 195, 175);
+        border-radius: 5%;
+      }
+    }
+    .far {
+      padding: 5px;
+    }
+  }
+  .introduction {
+    padding: 15px;
+    .introText {
+      font-family: "Dancing Script", cursive;
+      font-size: 25px;
+    }
+  }
+  .homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../images/bedroom.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    color: rgb(233, 230, 217);
+    .welcomeContainer {
+      background-color: black;
+      opacity: 0.7;
+      border-radius: 2%;
+      width: 300px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      .welcomeText {
+        font-family: "Dancing Script", cursive;
+        font-size: 30px;
+      }
+    }
+    .showProductsContainer {
+      margin: 25px;
+      .showProductsLink {
+        padding: 15px;
+        text-decoration: none;
+        font-weight: bold;
+        border: solid rgb(233, 230, 217);
+        border-radius: 50%;
+        font-size: 25px;
+        color: rgb(233, 230, 217);
+        background: black;
+        opacity: 0.7;
+        border-radius: 50%;
+        font-family: "Dancing Script", cursive;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
 .productDescription {
   display: none;
 }
@@ -7,4 +89,3 @@
 .show {
   display: block;
 }
-

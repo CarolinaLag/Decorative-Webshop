@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: lightcyan; }
+  background-color: lightcyan;
+  height: 50px; }
   .navigation .logo-container {
     margin-left: 10px; }
   .navigation .menu-list-container {
@@ -16,6 +17,73 @@
         padding-left: 10px; }
         .navigation .menu-list-container .menu-list .menu-list-item a {
           text-decoration: none; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.homeSection {
+  background-color: #e9e6d9;
+  height: 100vh; }
+  .homeSection .loginLinkContainer {
+    background-color: black;
+    opacity: 0.7;
+    padding: 20px; }
+    .homeSection .loginLinkContainer .loginLink {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold; }
+      .homeSection .loginLinkContainer .loginLink:hover {
+        background: #cac3af;
+        border-radius: 5%; }
+    .homeSection .loginLinkContainer .far {
+      padding: 5px; }
+  .homeSection .introduction {
+    padding: 15px; }
+    .homeSection .introduction .introText {
+      font-family: "Dancing Script", cursive;
+      font-size: 25px; }
+  .homeSection .homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../images/bedroom.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    color: #e9e6d9; }
+    .homeSection .homeContainer .welcomeContainer {
+      background-color: black;
+      opacity: 0.7;
+      border-radius: 2%;
+      width: 300px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px; }
+      .homeSection .homeContainer .welcomeContainer .welcomeText {
+        font-family: "Dancing Script", cursive;
+        font-size: 30px; }
+    .homeSection .homeContainer .showProductsContainer {
+      margin: 25px; }
+      .homeSection .homeContainer .showProductsContainer .showProductsLink {
+        padding: 15px;
+        text-decoration: none;
+        font-weight: bold;
+        border: solid #e9e6d9;
+        border-radius: 50%;
+        font-size: 25px;
+        color: #e9e6d9;
+        background: black;
+        opacity: 0.7;
+        border-radius: 50%;
+        font-family: "Dancing Script", cursive; }
+        .homeSection .homeContainer .showProductsContainer .showProductsLink:hover {
+          opacity: 0.5; }
 
 .productDescription {
   display: none; }
