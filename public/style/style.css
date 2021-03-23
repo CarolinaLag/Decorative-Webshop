@@ -184,6 +184,9 @@
   .loginContainer .loginHeadline {
     margin-bottom: 1%;
     font-family: "Open Sans", sans-serif; }
+  .loginContainer .loginErr {
+    font-family: "Open Sans", sans-serif;
+    color: red; }
   .loginContainer .loginForm {
     display: flex;
     flex-direction: column;
@@ -208,6 +211,44 @@
         padding: 0px 3px; }
   .loginContainer .loginLinks {
     font-family: "Open Sans", sans-serif; }
+
+.registerResetContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  align-items: center;
+  background-color: #e9e6d9;
+  height: 100vh;
+  width: 100vw; }
+  .registerResetContainer .registerResetHeadline {
+    margin-bottom: 1%;
+    font-family: "Open Sans", sans-serif; }
+  .registerResetContainer .registerResetForm {
+    display: flex;
+    flex-direction: column;
+    width: 270px; }
+    .registerResetContainer .registerResetForm .registerResetInput {
+      border: 1px solid #c2c2c2;
+      font-family: "Open Sans", sans-serif;
+      height: 32px;
+      font-size: 14px;
+      padding: 0 9px;
+      border-radius: 7px;
+      margin: 5px 0px; }
+    .registerResetContainer .registerResetForm .resetErr {
+      font-family: "Open Sans", sans-serif;
+      color: red; }
+    .registerResetContainer .registerResetForm .registerResetButton {
+      border: 1px solid #9b9999;
+      font-family: "Open Sans", sans-serif;
+      height: 25px;
+      font-size: 14px;
+      padding: 0 9px;
+      border-radius: 4px;
+      margin: 5px 0px; }
+  .registerResetContainer .registerResetLink {
+    font-family: "Open Sans", sans-serif;
+    text-align: center; }
 
 .message {
   color: green;

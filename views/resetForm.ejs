@@ -1,13 +1,47 @@
-<h2>Reset password</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset password</title>
 
-<% if (err) { %>
-    <p class="resetFormErr"><%= err %></p>
-    <% } %>
-<form action="/resetForm" method="post">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="registerResetContainer">
+      <h2 class="registerResetHeadline">Reset password</h2>
 
-<input type="password" name="password" id="" class="resetInput" placeholder="Enter new password">
-<input type="email" name="email" value="<%=email%>" hidden>
+      <% if (err) { %>
+      <p class="resetErr"><%= err %></p>
+      <% } %>
+      <form action="/resetForm" method="post" class="registerResetForm">
+        <input
+          type="password"
+          name="password"
+          id=""
+          class="registerResetInput"
+          placeholder="Enter new password"
+        />
+        <input
+          class="registerResetInput"
+          type="email"
+          name="email"
+          value="<%=email%>"
+          hidden
+        />
 
-<button type="submit" class="resetBtn">Reset password</button>
-
-</form>
+        <button type="submit" class="registerResetButton">
+          Reset password
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

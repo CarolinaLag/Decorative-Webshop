@@ -1,17 +1,40 @@
-<%- include("header.ejs")%>
-  <%- include("menu.ejs")%>
-    <form action="/reset" method="post">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset password</title>
 
-      <h2 class="resetHeading">Forgot your password?</h2>
-      <% if(err) { %>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+  </head>
+  <body>
+    <%- include("menu.ejs")%>
+    <div class="registerResetContainer">
+      <h2 class="registerResetHeadline">Forgot your password?</h2>
+      <form action="/reset" method="post" class="registerResetForm">
+        <% if(err) { %>
 
-        <div class="resetErr">
-          <%= err %>
-        </div>
+        <div class="resetErr"><%= err %></div>
 
         <% } %>
-          <input type="email" name="email" id="" class="resetInput" placeholder="Enter your email">
+        <input
+          type="email"
+          name="email"
+          id=""
+          class="registerResetInput"
+          placeholder="Enter your email"
+        />
 
-          <button type="submit" class="resetBtn">Send link</button>
-
-    </form>
+        <button type="submit" class="registerResetButton">Send link</button>
+      </form>
+    </div>
+  </body>
+</html>
