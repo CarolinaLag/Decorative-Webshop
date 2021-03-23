@@ -167,6 +167,113 @@
         font-family: 'Dancing Script', cursive;
         font-size: 30px; }
 
+body {
+  background-color: #e9e6d9; }
+
+.cart-wrapper {
+  font-family: 'Open sans', sans-serif;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .cart-wrapper #cart-heading {
+    margin: 40px 0; }
+  .cart-wrapper .cart-product-container {
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    padding: 10px 0;
+    margin-bottom: 10px; }
+    @media screen and (min-width: 1024px) {
+      .cart-wrapper .cart-product-container {
+        width: 70%; } }
+    .cart-wrapper .cart-product-container .cart-item {
+      margin: 4px 0;
+      text-align: center;
+      flex: 1; }
+    .cart-wrapper .cart-product-container .remove {
+      color: black; }
+      .cart-wrapper .cart-product-container .remove:hover {
+        opacity: 0.7; }
+  .cart-wrapper .cart-total {
+    margin-top: 20px;
+    font-size: 1.5em; }
+  .cart-wrapper .cart-links {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center; }
+    .cart-wrapper .cart-links .checkout-link {
+      color: black;
+      font-size: 1.2em;
+      text-decoration: none;
+      margin-bottom: 10px; }
+    .cart-wrapper .cart-links .continue-link {
+      color: black;
+      font-size: 0.8em;
+      text-decoration: none; }
+      .cart-wrapper .cart-links .continue-link:hover {
+        cursor: pointer;
+        text-decoration: underline; }
+
+.wrapper {
+  background-image: url("../images/living-room.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh; }
+
+.checkout-container {
+  font-family: 'Open sans', sans-serif;
+  background-color: #e9e6d9;
+  opacity: 0.9;
+  width: 70%;
+  margin: 0 auto;
+  padding: 40px 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .checkout-container #checkout-heading {
+    margin-bottom: 40px; }
+  .checkout-container .checkout-product-container {
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    padding: 10px 0;
+    margin-bottom: 10px; }
+    @media screen and (min-width: 1024px) {
+      .checkout-container .checkout-product-container {
+        width: 70%; } }
+    .checkout-container .checkout-product-container .checkout-item {
+      margin: 4px 0;
+      text-align: center;
+      flex: 1; }
+  .checkout-container .checkout-total {
+    margin-top: 20px;
+    font-size: 1.5em; }
+  .checkout-container .checkout-links {
+    display: flex;
+    flex-direction: column; }
+    .checkout-container .checkout-links .cart-link {
+      color: black;
+      font-size: 0.8em;
+      text-decoration: none; }
+      .checkout-container .checkout-links .cart-link:hover {
+        text-decoration: underline; }
+    .checkout-container .checkout-links .payment-btn {
+      margin: 20px 0; }
+
 .productDescription {
   display: none; }
 
@@ -210,8 +317,9 @@
     font-family: "Open Sans", sans-serif; }
 
 .message {
-  color: green;
-  font-family: 'Open sans', sans-serif; }
+  color: black;
+  font-family: 'Open sans', sans-serif;
+  margin-bottom: 10px; }
 
 .warning_message {
   color: red; }
