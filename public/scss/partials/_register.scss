@@ -1,1 +1,38 @@
 //Register + Reset password
+@import "../util/mixins";
+@import "../util/variables";
+
+.registerResetContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  align-items: center;
+  background-color: $bg-color;
+  height: 100vh;
+  width: 100vw;
+  .registerResetHeadline {
+    margin-bottom: 1%;
+    font-family: "Open Sans", sans-serif;
+  }
+  .registerResetForm {
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    .registerResetInput {
+      @include inputStyle;
+      margin: 5px 0px;
+    }
+    .resetErr {
+      font-family: "Open Sans", sans-serif;
+      color: red;
+    }
+    .registerResetButton {
+      @include buttonStyle;
+      margin: 5px 0px;
+    }
+  }
+  .registerResetLink {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+  }
+}

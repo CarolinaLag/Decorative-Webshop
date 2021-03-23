@@ -1,14 +1,33 @@
-<h2>Reset Mail</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset password</title>
 
-    <% if (err) { %>
-    <p class="resetErr"><%= err %></p>
-    <% } %>
-<div class="checkMailContainer">
-    <div class="resetMailSent">
-      A reset password has been sent, please check your mail.
-      <div>
-        Did not receive any mail? Please press
-        <a href="/reset" class="resendLink">Resend</a>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="registerResetContainer">
+      <h2 class="registerResetHeadline">Reset Mail</h2>
+
+      <% if (err) { %>
+      <p class="resetErr"><%= err %></p>
+      <% } %>
+
+      <div class="registerResetLink">
+        <span>A reset password has been sent, please check your mail.</span>
+        <span> Did not receive any mail? </span>
+        <a href="/reset">Resend</a>
       </div>
     </div>
-  </div>
+  </body>
+</html>
