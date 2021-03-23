@@ -54,6 +54,7 @@
         value="<%= product.price %>"
       />
       <input type="file" name="image" required />
+
       <button type="submit"><span class="fas fa-check fa-lg"></span></button>
       <a href="/addProduct"><span class="fas fa-window-close fa-lg"></span></a>
       <div>___________________________________</div>
@@ -62,6 +63,14 @@
     <div class="productName"><%= product.name %></div>
     <div class="productDescription"><%= product.description %></div>
     <div class="productPrice"><%= product.price %></div>
+    <div class="productImage">
+      <img
+        src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+        alt="Could not upload image"
+        height="200px"
+        width="100px"
+      />
+    </div>
     <a href="/addProduct/edit/<%= product._id %>" class="edit"
       ><span class="fas fa-edit"></span
     ></a>
