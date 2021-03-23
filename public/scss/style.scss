@@ -5,9 +5,15 @@
 @import 'partials/cart';
 @import 'partials/checkout';
 @import 'partials/productView';
+
+@import '../scss/partials/messages';
+@import 'util/mixins';
+@import 'partials/adminProductView';
+
 @import "partials/login";
 
 @import "partials/register";
 @import "../scss/partials/messages";
-@import "util/mixins";
+
+
 

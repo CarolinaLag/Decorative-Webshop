@@ -1,1 +1,101 @@
-//
+@import "../util/mixins";
+@import "../util/variables";
+
+.adminContainer {
+  background-color: $bg-color;
+  font-family: "Open Sans", sans-serif;
+  .addProductHeading {
+    padding: 10px;
+    font-size: 2em;
+  }
+  .productAdminForm {
+      padding:10px;
+    .productAdminInput {
+        border: 1px solid #c2c2c2;
+        height: 32px;
+        font-size: 14px;
+        padding: 0 9px;
+        border-radius: 7px;
+        margin-top: 5px;
+      }
+      .check {
+        font-size: 20px;
+        padding: 5px;
+        color: rgb(48, 204, 95);
+        border: none;
+        background: none;
+      }
+      .regret {
+        font-size: 20px;
+        padding: 5px;
+        color: rgb(223, 43, 43);
+      }
+    .subBtn {
+        border-radius: 5%;
+        cursor: pointer;
+        padding: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-left: 5px;
+        &:hover {
+          background: $hover-bg-color;
+          border-radius: 5%;
+        }
+        .fas {
+            font-size: 15px;
+        }
+      }
+  }
+  .adminListHeading {
+      padding: 10px;
+  }
+  .adminProductList {
+      list-style:none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+      .adminProductListItem {
+        flex: 1 1 30%;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 5px;
+        background: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .productAdminName {
+            font-weight: bold;
+            padding:10px;
+        }
+        .productAdminImage {
+            padding: 10px;
+        }
+        .productAdminDescription {
+            display: block;
+            padding: 10px;
+        }
+        .productAdminPrice {
+            padding: 10px;
+        }
+        .editDeleteSection {
+           display: flex;
+           flex-direction: row;
+           .edit {
+            color: rgb(48, 204, 95);
+            cursor: pointer;
+            text-decoration: none;
+            padding: 5px;
+           }
+           .remove {
+            color: rgb(223, 43, 43);
+            cursor: pointer;
+            text-decoration: none;
+            padding: 5px;
+           }
+        }
+       
+      }
+  }
+  
+}

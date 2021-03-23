@@ -12,72 +12,87 @@
   </head>
 
   <body>
-    <div><a href="/logout">Logout</a></div>
-    <div><a href="/products">Show productlist</a></div>
+    <%- include("menu.ejs")%>
 
-    <h2>Admin Productlist</h2>
-    <%- include("message.ejs")%> <% products.forEach( product=> { %> <% if
-    (product._id==idProduct) { %>
+    <section class="adminContainer">
+      <p class="loggedUser">Hi! You are logged in as: <%=user.name%></p>
 
-    <form
-      action="/addProduct/edit/<%= product._id %>"
-      method="post"
-      enctype="multipart/form-data"
-    >
-      <input
-        type="text"
-        name="name"
-        placeholder="name"
-        id=""
-        required
-        minlength="1"
-        maxlength="35"
-        value="<%= product.name %>"
-      />
-      <input
-        type="text"
-        name="description"
-        placeholder="description"
-        id=""
-        required
-        minlength="1"
-        maxlength="35"
-        value="<%= product.description %>"
-      />
-      <input
-        type="number"
-        name="price"
-        placeholder="price"
-        id=""
-        required
-        minlength="1"
-        value="<%= product.price %>"
-      />
-      <input type="file" name="image" required />
+      <h2 class="adminListHeading">Admin Productlist</h2>
+      <ul class="adminProductList">
+        <%- include("message.ejs")%> <% products.forEach( product=> { %> <% if
+        (product._id==idProduct) { %>
 
-      <button type="submit"><span class="fas fa-check fa-lg"></span></button>
-      <a href="/addProduct"><span class="fas fa-window-close fa-lg"></span></a>
-      <div>___________________________________</div>
-    </form>
-    <% } else { %>
-    <div class="productName"><%= product.name %></div>
-    <div class="productDescription"><%= product.description %></div>
-    <div class="productPrice"><%= product.price %></div>
-    <div class="productImage">
-      <img
-        src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
-        alt="Could not upload image"
-        height="200px"
-        width="100px"
-      />
-    </div>
-    <a href="/addProduct/edit/<%= product._id %>" class="edit"
-      ><span class="fas fa-edit"></span
-    ></a>
-    <a href="/addProduct/remove/<%= product._id %>" class="remove">
-      <span class="fas fa-trash"></span>
-    </a>
+        <form
+          action="/addProduct/edit/<%= product._id %>"
+          class="productAdminForm"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <input
+            class="productAdminInput"
+            type="text"
+            name="name"
+            placeholder="name"
+            id=""
+            required
+            minlength="1"
+            maxlength="35"
+            value="<%= product.name %>"
+          />
+          <input
+            class="productAdminInput"
+            type="text"
+            name="description"
+            placeholder="description"
+            id=""
+            required
+            minlength="1"
+            maxlength="35"
+            value="<%= product.description %>"
+          />
+          <input
+            class="productAdminInput"
+            type="number"
+            name="price"
+            placeholder="price"
+            id=""
+            required
+            minlength="1"
+            value="<%= product.price %>"
+          />
+          <input class="productAdminInput" type="file" name="image" required />
 
-    <% } %> <% }) %>
+          <button class="check" type="submit">
+            <span class="fas fa-check-square fa-lg"></span>
+          </button>
+          <a href="/addProduct" class="regret"
+            ><span class="fas fa-window-close fa-lg"></span
+          ></a>
+        </form>
+        <% } else { %>
+        <li class="adminProductListItem">
+          <div class="productAdminName"><%= product.name %></div>
+          <div class="productAdminDescription"><%= product.description %></div>
+          <div class="productAdminPrice"><%= product.price %></div>
+          <div class="productAdminImage">
+            <img
+              src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+              alt="Could not upload image"
+              height="200px"
+              width="100px"
+            />
+          </div>
+          <div class="editDeleteSection">
+            <a href="/addProduct/edit/<%= product._id %>" class="edit"
+              ><span class="fas fa-edit"></span
+            ></a>
+            <a href="/addProduct/remove/<%= product._id %>" class="remove">
+              <span class="fas fa-trash"></span>
+            </a>
+          </div>
+        </li>
+        <% } %> <% }) %>
+      </ul>
+    </section>
   </body>
 </html>
