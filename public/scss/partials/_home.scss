@@ -1,10 +1,10 @@
 .homeSection {
   background-color: rgb(233, 230, 217);
-  background-image: url("../images/bedroom.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 100vh;
+  background-image: url('../images/bedroom.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
   .loginLinkContainer {
     background-color: black;
     opacity: 0.7;
@@ -15,7 +15,7 @@
       text-decoration: none;
       font-weight: bold;
       &:hover {
-        background: rgb(202, 195, 175);
+        background: $hover-bg-color;
         border-radius: 5%;
       }
     }
@@ -26,29 +26,28 @@
   .introTextContainer {
     display: flex;
     align-items: center;
-justify-content: center;
-padding:10px;
+    justify-content: center;
+    padding: 10px;
 
-  .introduction {
-    background-color: rgb(233, 230, 217);
-    padding: 15px;
-    border-radius: 2%;
-    border-style: double;
-    @include desktop {
-  width: 50%;
-    }
-    .introText {
-      font-family: "Dancing Script", cursive;
-      font-size: 25px;
-     
+    .introduction {
+      background-color: rgb(233, 230, 217);
+      padding: 15px;
+      border-radius: 2%;
+      border-style: double;
+      @include desktop {
+        width: 50%;
+      }
+      .introText {
+        font-family: 'Dancing Script', cursive;
+        font-size: 25px;
+      }
     }
   }
-}
   .homeContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     color: rgb(233, 230, 217);
     .welcomeContainer {
       background-color: black;
@@ -61,7 +60,7 @@ padding:10px;
       justify-content: center;
       margin-top: 10px;
       .welcomeText {
-        font-family: "Dancing Script", cursive;
+        font-family: 'Dancing Script', cursive;
         font-size: 30px;
       }
     }
@@ -78,7 +77,7 @@ padding:10px;
         background: black;
         opacity: 0.7;
         border-radius: 50%;
-        font-family: "Dancing Script", cursive;
+        font-family: 'Dancing Script', cursive;
         &:hover {
           opacity: 0.5;
         }

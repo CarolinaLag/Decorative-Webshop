@@ -1,0 +1,10 @@
+@import '../util/variables';
+
+.message {
+  color: green;
+  font-family: 'Open sans', sans-serif;
+}
+
+.warning_message {
+  color: $warning-msg;
+}
