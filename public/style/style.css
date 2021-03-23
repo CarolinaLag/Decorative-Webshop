@@ -1,40 +1,90 @@
-.navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.navbar {
   background-color: black;
   opacity: 0.7;
-  color: white; }
-  @media screen and (min-width: 1024px) {
-    .navigation {
-      justify-content: flex-end; } }
-  .navigation .logo-container {
-    margin-left: 10px; }
-  .navigation .menu-list-container {
-    display: flex; }
-    .navigation .menu-list-container .menu-list {
-      list-style: none;
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: center; }
+  top: 0;
+  right: 0;
+  width: 100%; }
+  .navbar .menu-btn {
+    display: none; }
+    .navbar .menu-btn:checked ~ .menu {
+      max-height: 320px; }
+    .navbar .menu-btn:checked ~ .menu-icon .navicon {
+      background: transparent; }
+      .navbar .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg); }
+      .navbar .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg); }
+    .navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+      top: 0; }
+    .navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+      top: 0; }
+  .navbar .menu-icon {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    padding: 28px 20px;
+    user-select: none; }
+    @media screen and (min-width: 1024px) {
+      .navbar .menu-icon {
+        display: none; } }
+    .navbar .menu-icon .navicon {
+      background: white;
+      border-radius: 3px;
+      height: 4px;
+      position: relative;
+      transition: background 0.2s ease-out;
+      width: 25px; }
+      .navbar .menu-icon .navicon:before {
+        background: white;
+        border-radius: 3px;
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all 0.2s ease-out;
+        width: 100%;
+        top: 10px; }
+      .navbar .menu-icon .navicon:after {
+        background: white;
+        border-radius: 3px;
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all 0.2s ease-out;
+        width: 100%;
+        top: -10px; }
+  .navbar .menu {
+    max-height: 0; }
+    .navbar .menu .menu-list-item {
+      padding: 10px; }
+    @media screen and (min-width: 1024px) {
+      .navbar .menu {
+        flex-direction: row;
+        justify-content: flex-end;
+        max-height: none;
+        padding: 20px; } }
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    list-style: none;
+    overflow: hidden; }
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: white;
+      padding: 10px; }
       @media screen and (min-width: 1024px) {
-        .navigation .menu-list-container .menu-list {
-          flex-direction: row;
-          justify-content: center;
-          padding: 10px;
-          justify-content: space-evenly; } }
-      .navigation .menu-list-container .menu-list .menu-list-item {
-        padding: 10px; }
-        .navigation .menu-list-container .menu-list .menu-list-item .menu-link {
-          text-decoration: none;
-          font-family: 'Open Sans', sans-serif;
-          font-size: 1.2rem;
-          font-weight: 600;
-          color: white;
-          padding: 10px; }
-          .navigation .menu-list-container .menu-list .menu-list-item .menu-link:hover {
-            background: #807864;
-            border-radius: 5%; }
+        .navbar ul li a {
+          padding: 15px; } }
+      .navbar ul li a:hover {
+        background: #807864;
+        border-radius: 5%; }
 
 * {
   padding: 0;
@@ -69,6 +119,7 @@
     padding: 10px; }
     .homeSection .introTextContainer .introduction {
       background-color: #e9e6d9;
+      opacity: 0.8;
       padding: 15px;
       border-radius: 2%;
       border-style: double; }
@@ -78,6 +129,25 @@
       .homeSection .introTextContainer .introduction .introText {
         font-family: 'Dancing Script', cursive;
         font-size: 25px; }
+  .homeSection .showProductsContainer {
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .homeSection .showProductsContainer .showProductsLink {
+      padding: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      border: solid #e9e6d9;
+      border-radius: 50%;
+      font-size: 25px;
+      color: #e9e6d9;
+      background: black;
+      opacity: 0.7;
+      border-radius: 50%;
+      font-family: 'Dancing Script', cursive; }
+      .homeSection .showProductsContainer .showProductsLink:hover {
+        opacity: 0.5; }
   .homeSection .homeContainer {
     display: flex;
     flex-direction: column;
@@ -96,22 +166,6 @@
       .homeSection .homeContainer .welcomeContainer .welcomeText {
         font-family: 'Dancing Script', cursive;
         font-size: 30px; }
-    .homeSection .homeContainer .showProductsContainer {
-      margin: 25px; }
-      .homeSection .homeContainer .showProductsContainer .showProductsLink {
-        padding: 15px;
-        text-decoration: none;
-        font-weight: bold;
-        border: solid #e9e6d9;
-        border-radius: 50%;
-        font-size: 25px;
-        color: #e9e6d9;
-        background: black;
-        opacity: 0.7;
-        border-radius: 50%;
-        font-family: 'Dancing Script', cursive; }
-        .homeSection .homeContainer .showProductsContainer .showProductsLink:hover {
-          opacity: 0.5; }
 
 .productDescription {
   display: none; }
