@@ -31,6 +31,7 @@
 
     .introduction {
       background-color: rgb(233, 230, 217);
+      opacity: 0.8;
       padding: 15px;
       border-radius: 2%;
       border-style: double;
@@ -40,6 +41,29 @@
       .introText {
         font-family: 'Dancing Script', cursive;
         font-size: 25px;
+      }
+     
+    }
+  }
+  .showProductsContainer {
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .showProductsLink {
+      padding: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      border: solid rgb(233, 230, 217);
+      border-radius: 50%;
+      font-size: 25px;
+      color: rgb(233, 230, 217);
+      background: black;
+      opacity: 0.7;
+      border-radius: 50%;
+      font-family: 'Dancing Script', cursive;
+      &:hover {
+        opacity: 0.5;
       }
     }
   }
@@ -64,24 +88,6 @@
         font-size: 30px;
       }
     }
-    .showProductsContainer {
-      margin: 25px;
-      .showProductsLink {
-        padding: 15px;
-        text-decoration: none;
-        font-weight: bold;
-        border: solid rgb(233, 230, 217);
-        border-radius: 50%;
-        font-size: 25px;
-        color: rgb(233, 230, 217);
-        background: black;
-        opacity: 0.7;
-        border-radius: 50%;
-        font-family: 'Dancing Script', cursive;
-        &:hover {
-          opacity: 0.5;
-        }
-      }
-    }
+    
   }
 }
