@@ -13,14 +13,16 @@
   </head>
 
   <body>
-    <%- include("menu.ejs")%>
+    
     <section class="homeSection">
+      
+      <%- include("menu.ejs")%>
 
       <div class="loginLinkContainer">
         <a href="/login" class="loginLink"><i class="far fa-user"></i>Log in</a>
          <%- include("message.ejs")%>
       </div>
-       
+       <div class="introTextContainer">
       <div class="introduction">
         <p class="introText">
           Be inspired by our collection of the best home decors. We
@@ -29,6 +31,7 @@
           pieces, take a peek and look through our decor products.
         </p>
       </div>
+    </div>
 
       <div class="homeContainer">
         <div class="welcomeContainer">
