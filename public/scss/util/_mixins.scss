@@ -1,6 +1,23 @@
 @mixin desktop() {
-    @media screen and (min-width: 1024px) {
-      @content;
-    }
+  @media screen and (min-width: 1024px) {
+    @content;
   }
-  
+}
+
+@mixin inputStyle {
+  border: 1px solid #c2c2c2;
+  font-family: "Open Sans", sans-serif;
+  height: 32px;
+  font-size: 14px;
+  padding: 0 9px;
+  border-radius: 7px;
+}
+
+@mixin buttonStyle {
+  border: 1px solid #9b9999;
+  font-family: "Open Sans", sans-serif;
+  height: 25px;
+  font-size: 14px;
+  padding: 0 9px;
+  border-radius: 4px;
+}
