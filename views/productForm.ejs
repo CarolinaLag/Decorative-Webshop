@@ -14,48 +14,86 @@
   <body>
     <%- include("menu.ejs")%>
 
-    <p>logged in as: <%=user.name%></p>
-    <%-include("message.ejs")%>
+    <section class="adminContainer">
+      <p class="loggedUser">Hi! You are logged in as: <%=user.name%></p>
 
-    <h2>Add Products</h2>
+      <%-include("message.ejs")%>
 
-    <% if (err) { %>
+      <h2 class="addProductHeading">Add Products</h2>
 
-    <p class="addProductErr"><%= err %></p>
-    <% } %>
+      <% if (err) { %>
 
-    <form action="/addProduct" method="post" enctype="multipart/form-data">
-      <input type="text" name="name" placeholder="name" id="" />
-      <input type="text" name="description" placeholder="description" id="" />
-      <input type="number" name="price" placeholder="price" id="" />
-      <input type="file" name="image" placeholder="image" id="" required />
+      <p class="addProductErr"><%= err %></p>
+      <% } %>
 
-      <button type="submit"><span class="fas fa-plus"></span></button>
-    </form>
+      <form
+        action="/addProduct"
+        class="productAdminForm"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input
+          class="productAdminInput"
+          type="text"
+          name="name"
+          placeholder="name"
+          id=""
+        />
+        <input
+          class="productAdminInput"
+          type="text"
+          name="description"
+          placeholder="description"
+          id=""
+        />
+        <input
+          class="productAdminInput"
+          type="number"
+          name="price"
+          placeholder="price"
+          id=""
+        />
+        <input
+          class="productAdminInput"
+          type="file"
+          name="image"
+          placeholder="image"
+          id=""
+          required
+        />
 
-    <h2>Admin Productlist</h2>
+        <button class="subBtn" type="submit">
+          <span class="fas fa-plus"></span>
+        </button>
+      </form>
 
-    <% products.forEach( product=> { %>
+      <h2 class="adminListHeading">Admin Productlist</h2>
+      <ul class="adminProductList">
+        <% products.forEach( product=> { %>
+        <li class="adminProductListItem">
+          <div class="productAdminName"><%= product.name %></div>
+          <div class="productAdminImage">
+            <img
+              src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+              alt="Could not upload image"
+              height="200px"
+              width="100px"
+            />
+          </div>
+          <div class="productAdminDescription"><%= product.description %></div>
 
-    <div class="productName"><%= product.name %></div>
-    <div class="productImage">
-      <img
-        src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
-        alt="Could not upload image"
-        height="200px"
-        width="100px"
-      />
-    </div>
-    <div class="productDescription"><%= product.description %></div>
-    <div class="productPrice"><%= product.price %></div>
-    <a href="/addProduct/edit/<%= product._id %>" class="edit"
-      ><span class="fas fa-edit"></span
-    ></a>
-    <a href="/addProduct/remove/<%= product._id %>" class="remove">
-      <span class="fas fa-trash"></span>
-    </a>
-    <div>___________________________________</div>
-
-    <% }) %>
+          <div class="productAdminPrice"><%= product.price + "kr" %></div>
+          <div class="editDeleteSection">
+            <a href="/addProduct/edit/<%= product._id %>" class="edit"
+              ><span class="fas fa-edit"></span
+            ></a>
+            <a href="/addProduct/remove/<%= product._id %>" class="remove">
+              <span class="fas fa-trash"></span>
+            </a>
+          </div>
+        </li>
+        <% }) %>
+      </ul>
+    </section>
   </body>
 </html>

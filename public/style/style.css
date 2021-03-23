@@ -179,3 +179,81 @@
 
 .warning_message {
   color: red; }
+
+.adminContainer {
+  background-color: #e9e6d9;
+  font-family: "Open Sans", sans-serif; }
+  .adminContainer .addProductHeading {
+    padding: 10px;
+    font-size: 2em; }
+  .adminContainer .productAdminForm {
+    padding: 10px; }
+    .adminContainer .productAdminForm .productAdminInput {
+      border: 1px solid #c2c2c2;
+      height: 32px;
+      font-size: 14px;
+      padding: 0 9px;
+      border-radius: 7px;
+      margin-top: 5px; }
+    .adminContainer .productAdminForm .check {
+      font-size: 20px;
+      padding: 5px;
+      color: #30cc5f;
+      border: none;
+      background: none; }
+    .adminContainer .productAdminForm .regret {
+      font-size: 20px;
+      padding: 5px;
+      color: #df2b2b; }
+    .adminContainer .productAdminForm .subBtn {
+      border-radius: 5%;
+      cursor: pointer;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 5px; }
+      .adminContainer .productAdminForm .subBtn:hover {
+        background: #807864;
+        border-radius: 5%; }
+      .adminContainer .productAdminForm .subBtn .fas {
+        font-size: 15px; }
+  .adminContainer .adminListHeading {
+    padding: 10px; }
+  .adminContainer .adminProductList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .adminContainer .adminProductList .adminProductListItem {
+      flex: 1 1 30%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background: none;
+      display: flex;
+      flex-direction: column;
+      width: 100%; }
+      .adminContainer .adminProductList .adminProductListItem .productAdminName {
+        font-weight: bold;
+        padding: 10px; }
+      .adminContainer .adminProductList .adminProductListItem .productAdminImage {
+        padding: 10px; }
+      .adminContainer .adminProductList .adminProductListItem .productAdminDescription {
+        display: block;
+        padding: 10px; }
+      .adminContainer .adminProductList .adminProductListItem .productAdminPrice {
+        padding: 10px; }
+      .adminContainer .adminProductList .adminProductListItem .editDeleteSection {
+        display: flex;
+        flex-direction: row; }
+        .adminContainer .adminProductList .adminProductListItem .editDeleteSection .edit {
+          color: #30cc5f;
+          cursor: pointer;
+          text-decoration: none;
+          padding: 5px; }
+        .adminContainer .adminProductList .adminProductListItem .editDeleteSection .remove {
+          color: #df2b2b;
+          cursor: pointer;
+          text-decoration: none;
+          padding: 5px; }
