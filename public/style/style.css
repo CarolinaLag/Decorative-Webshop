@@ -1,22 +1,40 @@
 .navigation {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  background-color: lightcyan;
-  height: 50px; }
+  justify-content: center;
+  background-color: black;
+  opacity: 0.7;
+  color: white; }
+  @media screen and (min-width: 1024px) {
+    .navigation {
+      justify-content: flex-end; } }
   .navigation .logo-container {
     margin-left: 10px; }
   .navigation .menu-list-container {
-    display: flex;
-    margin-right: 10px; }
+    display: flex; }
     .navigation .menu-list-container .menu-list {
+      list-style: none;
       display: flex;
-      justify-content: space-around;
-      list-style-type: none; }
+      flex-flow: column nowrap;
+      align-items: center; }
+      @media screen and (min-width: 1024px) {
+        .navigation .menu-list-container .menu-list {
+          flex-direction: row;
+          justify-content: center;
+          padding: 10px;
+          justify-content: space-evenly; } }
       .navigation .menu-list-container .menu-list .menu-list-item {
-        padding-left: 10px; }
-        .navigation .menu-list-container .menu-list .menu-list-item a {
-          text-decoration: none; }
+        padding: 10px; }
+        .navigation .menu-list-container .menu-list .menu-list-item .menu-link {
+          text-decoration: none;
+          font-family: "Open Sans", sans-serif;
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: white;
+          padding: 10px; }
+          .navigation .menu-list-container .menu-list .menu-list-item .menu-link:hover {
+            background: #cac3af;
+            border-radius: 5%; }
 
 * {
   padding: 0;
@@ -25,6 +43,10 @@
 
 .homeSection {
   background-color: #e9e6d9;
+  background-image: url("../images/bedroom.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   height: 100vh; }
   .homeSection .loginLinkContainer {
     background-color: black;
@@ -40,20 +62,26 @@
         border-radius: 5%; }
     .homeSection .loginLinkContainer .far {
       padding: 5px; }
-  .homeSection .introduction {
-    padding: 15px; }
-    .homeSection .introduction .introText {
-      font-family: "Dancing Script", cursive;
-      font-size: 25px; }
+  .homeSection .introTextContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; }
+    .homeSection .introTextContainer .introduction {
+      background-color: #e9e6d9;
+      padding: 15px;
+      border-radius: 2%;
+      border-style: double; }
+      @media screen and (min-width: 1024px) {
+        .homeSection .introTextContainer .introduction {
+          width: 50%; } }
+      .homeSection .introTextContainer .introduction .introText {
+        font-family: "Dancing Script", cursive;
+        font-size: 25px; }
   .homeSection .homeContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("../images/bedroom.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 100vh;
     color: #e9e6d9; }
     .homeSection .homeContainer .welcomeContainer {
       background-color: black;

@@ -1,24 +1,45 @@
+@import "../util/mixins";
+
 .navigation {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   background-color: black;
   opacity: 0.7;
-  height: 50px;
+  color: white;
+  @include desktop {
+    justify-content: flex-end;
+  }
   .logo-container {
     margin-left: 10px;
   }
   .menu-list-container {
     display: flex;
-    margin-right: 10px;
     .menu-list {
+      list-style: none;
       display: flex;
-      justify-content: space-around;
-      list-style-type: none;
+      flex-flow: column nowrap;
+      align-items: center;
+      @include desktop {
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px;
+        justify-content: space-evenly
+      }
       .menu-list-item {
-        padding-left: 10px;
-        a {
+       padding:10px;
+        .menu-link {
           text-decoration: none;
+          font-family: "Open Sans", sans-serif;
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: white;
+          padding:10px;
+          &:hover {
+            background: rgb(202, 195, 175);
+            border-radius: 5%;
+           
+          }
         }
       }
     }
