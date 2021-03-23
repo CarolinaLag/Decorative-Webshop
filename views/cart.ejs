@@ -1,37 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
-  </head>
 
-  <body>
-    <h2>Shopping Cart</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+</head>
 
-    <%- include ("menu.ejs")%> <%- include("message.ejs")%>
-    <h2>Shopping Cart</h2>
+<body>
 
-    <div><a href="/products">Go back to products</a></div>
 
-    <% cartItems.forEach( cartItem=> { %>
+  <%- include ("menu.ejs")%>
+    <div class="cart-wrapper">
+      <h1 id="cart-heading">Shopping Cart</h1>
+      <%- include("message.ejs")%>
 
-    <div class="productName">Produkt: <%= cartItem.name %></div>
-    <div class="productQty">Antal: <%= cartItem.quantity%></div>
-    <div class="productPrice">Pris: <%= cartItem.price %></div>
-    <div class="productPrice">Subtotal: <%= cartItem.subtotal %></div>
-    <a href="/showShoppingCart/remove/<%= cartItem._id %>" class="remove">
-      <span class="fas fa-trash"></span>
-    </a>
 
-    <div>_________________________________</div>
-    <% }) %>
-    <div>Total price: <%= totalPrice%></div>
-    <div><a href="/checkout">To checkout</a></div>
-  </body>
+
+        <% cartItems.forEach( cartItem=> { %>
+          <div class="cart-product-container">
+            <div class="cart-item">
+              <%= cartItem.name %>
+            </div>
+            <div class="cart-item">
+              <%= cartItem.quantity%> st
+            </div>
+            <div class="cart-item">
+              <%= cartItem.price %> kr
+            </div>
+            <div class="cart-item">Subtotal: <%= cartItem.subtotal %> kr
+            </div>
+            <div class="cart-item">
+              <a href="/showShoppingCart/remove/<%= cartItem._id %>" class="remove">
+                <span class="fas fa-trash"></span>
+              </a>
+            </div>
+          </div>
+
+          <% }) %>
+
+            <div class="cart-total">
+              <p>Total price: <%= totalPrice%> kr
+              </p>
+            </div>
+            <div class="cart-links">
+              <a href="/checkout" class="checkout-link">Checkout &RightArrow;</a>
+              <a href="/products" class="continue-link">&LeftArrow; Continue Shopping</a>
+            </div>
+
+    </div>
+</body>
+
 </html>
