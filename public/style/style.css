@@ -173,6 +173,42 @@
 .show {
   display: block; }
 
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  align-items: center;
+  background-color: #e9e6d9;
+  height: 100vh;
+  width: 100vw; }
+  .loginContainer .loginHeadline {
+    margin-bottom: 1%;
+    font-family: "Open Sans", sans-serif; }
+  .loginContainer .loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 270px; }
+    .loginContainer .loginForm .loginInput {
+      border: 1px solid #c2c2c2;
+      font-family: "Open Sans", sans-serif;
+      height: 32px;
+      font-size: 14px;
+      padding: 0 9px;
+      border-radius: 7px;
+      margin: 5px 0px; }
+    .loginContainer .loginForm .loginBtn {
+      border: 1px solid #9b9999;
+      font-family: "Open Sans", sans-serif;
+      height: 25px;
+      font-size: 14px;
+      padding: 0 9px;
+      border-radius: 4px;
+      margin: 5px 0px; }
+      .loginContainer .loginForm .loginBtn .loginBtnContent {
+        padding: 0px 3px; }
+  .loginContainer .loginLinks {
+    font-family: "Open Sans", sans-serif; }
+
 .message {
   color: green;
   font-family: 'Open sans', sans-serif; }
