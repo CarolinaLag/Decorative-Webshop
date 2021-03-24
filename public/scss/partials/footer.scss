@@ -1,5 +1,5 @@
-@import '../util/mixins';
-@import '../util/variables';
+@import "../util/mixins";
+@import "../util/variables";
 
 .footer-container {
   display: flex;
@@ -10,6 +10,7 @@
   font-size: 18px;
   line-height: 1.8;
   padding: 10%;
+
   @include desktop {
     flex-direction: row;
     justify-content: space-between;
