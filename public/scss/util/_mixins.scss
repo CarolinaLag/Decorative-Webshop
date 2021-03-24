@@ -20,4 +20,9 @@
   font-size: 14px;
   padding: 0 9px;
   border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background: $hover-bg-color;
+    border-radius: 5%;
+  }
 }

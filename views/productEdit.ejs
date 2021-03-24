@@ -28,48 +28,52 @@
           method="post"
           enctype="multipart/form-data"
         >
-        <div class="inputSection">
-          <input
-            class="productAdminInput"
-            type="text"
-            name="name"
-            placeholder="name"
-            id=""
-            required
-            minlength="1"
-            maxlength="35"
-            value="<%= product.name %>"
-          />
-          <input
-            class="productAdminInput"
-            type="text"
-            name="description"
-            placeholder="description"
-            id=""
-            required
-            minlength="1"
-            maxlength="35"
-            value="<%= product.description %>"
-          />
-          <input
-            class="productAdminInput"
-            type="number"
-            name="price"
-            placeholder="price"
-            id=""
-            required
-            minlength="1"
-            value="<%= product.price %>"
-          />
-          <input class="productAdminInput" type="file" name="image" required />
-        </div>
+          <div class="inputSection">
+            <input
+              class="productAdminInput"
+              type="text"
+              name="name"
+              placeholder="name"
+              id=""
+              required
+              minlength="1"
+              maxlength="35"
+              value="<%= product.name %>"
+            />
+            <input
+              class="productAdminInput"
+              type="text"
+              name="description"
+              placeholder="description"
+              id=""
+              required
+              minlength="1"
+              maxlength="35"
+              value="<%= product.description %>"
+            />
+            <input
+              class="productAdminInput"
+              type="number"
+              name="price"
+              placeholder="price"
+              id=""
+              required
+              minlength="1"
+              value="<%= product.price %>"
+            />
+            <input
+              class="productAdminInput"
+              type="file"
+              name="image"
+              required
+            />
+          </div>
           <button class="check" type="submit">
             <span class="fas fa-check-square fa-lg"></span>
           </button>
           <a href="/addProduct" class="regret"
             ><span class="fas fa-window-close fa-lg"></span
           ></a>
-        
         </form>
         <% } else { %>
         <li class="adminProductListItem">
@@ -81,7 +85,7 @@
               src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
               alt="Could not upload image"
               height="200px"
-              width="100px"
+              width="200px"
             />
           </div>
           <div class="editDeleteSection">

@@ -48,8 +48,9 @@
         display: block;
       }
       .wishListDescriptionButton {
-        width: 25%;
+        width: 100px;
         margin: 10px 10px;
+        cursor: pointer;
         @include buttonStyle;
         &:hover {
           background: $hover-bg-color;
@@ -57,8 +58,9 @@
         }
       }
       .wishListQuantityInput {
-        width: 10%;
+        width: 60px;
         margin: 10px 0px;
+
         @include inputStyle;
       }
       .wishListAddToCartButton {
@@ -68,6 +70,7 @@
         background: none;
         border: none;
         height: 40px;
+        cursor: pointer;
 
         &:hover {
           background: $hover-bg-color;
@@ -79,6 +82,7 @@
         color: black;
         &:hover {
           background: $hover-bg-color;
+          border-radius: 5%;
         }
       }
     }

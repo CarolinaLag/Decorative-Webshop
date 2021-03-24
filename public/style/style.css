@@ -281,7 +281,11 @@ body {
       font-size: 14px;
       padding: 0 9px;
       border-radius: 4px;
+      cursor: pointer;
       margin: 20px 0; }
+      .checkout-container .checkout-links .payment-btn:hover {
+        background: #807864;
+        border-radius: 5%; }
 
 .productPageContainer {
   font-family: "Open Sans", sans-serif; }
@@ -534,7 +538,7 @@ body {
     font-family: "Open Sans", sans-serif; }
   .loginContainer .loginErr {
     font-family: "Open Sans", sans-serif;
-    color: red; }
+    color: red !important; }
   .loginContainer .loginForm {
     display: flex;
     flex-direction: column;
@@ -554,7 +558,11 @@ body {
       font-size: 14px;
       padding: 0 9px;
       border-radius: 4px;
+      cursor: pointer;
       margin: 5px 0px; }
+      .loginContainer .loginForm .loginBtn:hover {
+        background: #807864;
+        border-radius: 5%; }
       .loginContainer .loginForm .loginBtn .loginBtnContent {
         padding: 0px 3px; }
   .loginContainer .loginLinks {
@@ -598,19 +606,24 @@ body {
       .wishListContainer .wishListProductList .wishListProductCard .show {
         display: block; }
       .wishListContainer .wishListProductList .wishListProductCard .wishListDescriptionButton {
-        width: 25%;
+        width: 100px;
         margin: 10px 10px;
+        cursor: pointer;
         border: 1px solid #9b9999;
         font-family: "Open Sans", sans-serif;
         height: 25px;
         font-size: 14px;
         padding: 0 9px;
-        border-radius: 4px; }
+        border-radius: 4px;
+        cursor: pointer; }
+        .wishListContainer .wishListProductList .wishListProductCard .wishListDescriptionButton:hover {
+          background: #807864;
+          border-radius: 5%; }
         .wishListContainer .wishListProductList .wishListProductCard .wishListDescriptionButton:hover {
           background: #807864;
           border-radius: 5%; }
       .wishListContainer .wishListProductList .wishListProductCard .wishListQuantityInput {
-        width: 10%;
+        width: 60px;
         margin: 10px 0px;
         border: 1px solid #c2c2c2;
         font-family: "Open Sans", sans-serif;
@@ -625,11 +638,16 @@ body {
         font-size: 14px;
         padding: 0 9px;
         border-radius: 4px;
+        cursor: pointer;
         padding: 10px;
         font-size: 20px;
         background: none;
         border: none;
-        height: 40px; }
+        height: 40px;
+        cursor: pointer; }
+        .wishListContainer .wishListProductList .wishListProductCard .wishListAddToCartButton:hover {
+          background: #807864;
+          border-radius: 5%; }
         .wishListContainer .wishListProductList .wishListProductCard .wishListAddToCartButton:hover {
           background: #807864;
           border-radius: 5%; }
@@ -637,7 +655,8 @@ body {
         padding: 10px;
         color: black; }
         .wishListContainer .wishListProductList .wishListProductCard .fa-trash:hover {
-          background: #807864; }
+          background: #807864;
+          border-radius: 5%; }
 
 .registerResetContainer {
   display: flex;
@@ -672,10 +691,17 @@ body {
       font-size: 14px;
       padding: 0 9px;
       border-radius: 4px;
+      cursor: pointer;
       margin: 5px 0px; }
+      .registerResetContainer .registerResetForm .registerResetButton:hover {
+        background: #807864;
+        border-radius: 5%; }
   .registerResetContainer .registerResetLink {
     font-family: "Open Sans", sans-serif;
     text-align: center; }
+  .registerResetContainer .loginErr {
+    font-family: "Open Sans", sans-serif;
+    color: red !important; }
 
 .message {
   font-family: 'Open sans', sans-serif;

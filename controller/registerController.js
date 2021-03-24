@@ -1,9 +1,9 @@
-const User = require('../model/user');
-const bcrypt = require('bcrypt');
+const User = require("../model/user");
+const bcrypt = require("bcrypt");
 
 exports.registerRender_get = (req, res) => {
   try {
-    res.render('register.ejs', { message: '' });
+    res.render("register.ejs", { err: "" });
   } catch (err) {
     console.log(err);
   }
@@ -15,17 +15,17 @@ exports.registerSubmit_post = async (req, res) => {
 
   try {
     if (
-      req.body.email == '' ||
-      req.body.name == '' ||
-      req.body.password == ''
+      req.body.email == "" ||
+      req.body.name == "" ||
+      req.body.password == ""
     ) {
-      return res.render('register.ejs', {
-        message: 'Please fill in all fields',
+      return res.render("register.ejs", {
+        err: "Please fill in all fields",
       });
     }
     if (userMail || userName) {
-      res.render('register.ejs', {
-        message: 'Email or username already exists',
+      res.render("register.ejs", {
+        err: "Email or username already exists",
       });
     } else {
       const salt = await bcrypt.genSalt(10);
@@ -37,8 +37,8 @@ exports.registerSubmit_post = async (req, res) => {
         password: hashedPassword,
       });
       newUser.save();
-      req.flash('success_msg', 'You are now registered!');
-      res.redirect('/login');
+      req.flash("success_msg", "You are now registered!");
+      res.redirect("/login");
     }
   } catch (err) {
     console.log(err.message);

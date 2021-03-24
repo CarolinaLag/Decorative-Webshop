@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
 
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Register</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
-</head>
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+  </head>
 
   <body>
     <div class="registerResetContainer">
       <h2 class="registerResetHeadline">Register</h2>
+      <% if (err) { %>
+      <p class="loginErr"><%= err %></p>
+      <% } %>
       <form action="/register" method="post" class="registerResetForm">
         <input
           class="registerResetInput"
@@ -40,13 +46,10 @@
       <div class="registerResetLink">
         <span>Already registered? </span>
         <a href="/login">Login</a>
-        <%- include("message")%>
       </div>
       <div class="registerResetLink">
         <a href="/">Back to home</a>
       </div>
-
     </div>
-</body>
-
+  </body>
 </html>
