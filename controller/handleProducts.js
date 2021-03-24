@@ -4,7 +4,7 @@ const User = require("../model/user");
 exports.renderProducts = async (req, res) => {
   const page = +req.query.page || 1;
   const totalData = await Product.find().countDocuments();
-  const taskPerReq = 2;
+  const taskPerReq = 6;
   const totalPages = Math.ceil(totalData / taskPerReq);
   const dataToShow = taskPerReq * page;
   const sorted = +req.query.sorted || 1;
@@ -26,8 +26,8 @@ exports.renderProducts = async (req, res) => {
       });
     } else {
       let products = await Product.find({})
-        .limit(2)
-        .skip((page - 1) * 2)
+        .limit(6)
+        .skip((page - 1) * 6)
         .sort({ price: sorted });
       res.render("productView.ejs", {
         products: products,
