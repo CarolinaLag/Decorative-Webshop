@@ -11,7 +11,6 @@ exports.addToCart = async (req, res) => {
   totalPrice = 0;
   let newtotal = subtotal;
   let totalSum = 0;
-  //console.log(quantity);
   let cart = await Cart.findOne({ userId });
   try {
     if (cart) {
@@ -30,14 +29,12 @@ exports.addToCart = async (req, res) => {
         for (let i = 0; i < cart.products.length; i++) {
           totalSum += cart.products[i].subtotal;
           cart.totalPrice = totalSum;
-          // console.log(totalSum);
         }
       } else {
         cart.products.push({ productId, quantity, name, price, subtotal });
         for (let i = 0; i < cart.products.length; i++) {
           totalSum += cart.products[i].subtotal;
           cart.totalPrice = totalSum;
-          // console.log(totalSum);
         }
       }
 
@@ -54,7 +51,6 @@ exports.addToCart = async (req, res) => {
       for (let i = 0; i < cart.products.length; i++) {
         newtotal += cart.products[i].subtotal;
         cart.totalPrice = newtotal;
-        // console.log(totalSum);
       }
       req.flash('success_msg', 'Product added to cart');
       res.redirect('/products');
@@ -88,7 +84,6 @@ exports.removeCartProduct = async (req, res) => {
   const user = await User.findOne({ _id: req.user.user._id });
   const userId = user;
   const cart = await Cart.findOne({ userId });
-
   const { price } = req.body;
   const quantity = Number.parseInt(req.body.quantity);
   const subtotal = price * quantity;
@@ -100,7 +95,6 @@ exports.removeCartProduct = async (req, res) => {
       cart.products.pull({ _id: id });
 
       for (let i = 0; i < cart.products.length; i++) {
-        console.log(cart.products.length);
         totalSum += cart.products[i].subtotal;
         cart.totalPrice = totalSum;
       }

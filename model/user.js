@@ -28,12 +28,6 @@ userSchema.methods.addProductList = function (productId) {
   this.save();
 };
 
-userSchema.methods.addToCart = async function (productId) {
-  this.cartList.push(productId);
-
-  await this.save();
-};
-
 userSchema.methods.addWish = async function (wishId, user) {
   for (i = 0; i < user.wishList.length; i++) {
     if (user.wishList[i] == wishId) return;

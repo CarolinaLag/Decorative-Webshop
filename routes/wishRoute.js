@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
 const verifyUser = require('../middleware/verifyUser');
-
 const wishListController = require('../controller/wishListController');
 
 router.get('/wishlist', verifyUser, wishListController.wishListShow);

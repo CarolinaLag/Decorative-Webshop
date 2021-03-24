@@ -3,11 +3,11 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-const loginRender = (req, res) => {
+exports.loginRender = (req, res) => {
   res.render('login.ejs', { err: ' ' });
 };
 
-const loginSubmit = async (req, res) => {
+exports.loginSubmit = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -19,7 +19,6 @@ const loginSubmit = async (req, res) => {
     if (!user) return res.render('login.ejs', { err: 'User is not valid' });
 
     const validUser = await bcrypt.compare(password, user.password);
-    console.log(validUser);
 
     if (!validUser)
       return res.render('login.ejs', { err: 'Password is not valid' });
@@ -38,9 +37,4 @@ const loginSubmit = async (req, res) => {
   } catch (err) {
     res.render('login.ejs', { err: err });
   }
-};
-
-module.exports = {
-  loginRender,
-  loginSubmit,
 };

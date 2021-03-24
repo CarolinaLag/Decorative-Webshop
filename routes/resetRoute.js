@@ -1,14 +1,13 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
+const resetPassController = require('../controller/resetPassController');
 
-const { resetRender, resetSubmit, resetParams, resetFormSubmit} = require("../controller/resetPassController");
+router.get('/reset', resetPassController.resetRender);
 
-router.get("/reset", resetRender);
+router.post('/reset', resetPassController.resetSubmit);
 
-router.post("/reset", resetSubmit);
+router.get('/reset/:token', resetPassController.resetParams);
 
-router.get("/reset/:token", resetParams);
-
-router.post("/resetForm", resetFormSubmit);
+router.post('/resetForm', resetPassController.resetFormSubmit);
 
 module.exports = router;

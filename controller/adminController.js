@@ -4,7 +4,7 @@ const Product = require('../model/product');
 const User = require('../model/user');
 require('dotenv').config();
 
-const addProductForm = async (req, res) => {
+exports.addProductForm = async (req, res) => {
   const user = await User.findOne({ _id: req.user.user._id }).populate(
     'productList'
   );
@@ -16,7 +16,7 @@ const addProductForm = async (req, res) => {
   });
 };
 
-const addProductFormSubmit = async (req, res) => {
+exports.addProductFormSubmit = async (req, res) => {
   const { name, description, price } = req.body;
 
   if (name == '' || description == '' || price == '') {
@@ -44,7 +44,7 @@ const addProductFormSubmit = async (req, res) => {
   res.redirect('/addProduct');
 };
 
-const showAdminProducts = async (req, res) => {
+exports.showAdminProducts = async (req, res) => {
   const user = await User.findOne({ _id: req.user.user._id }).populate(
     'productList'
   );
@@ -53,7 +53,7 @@ const showAdminProducts = async (req, res) => {
   res.render('productForm.ejs', { products: user.productList, err: ' ' });
 };
 
-const showProducts = async (req, res) => {
+exports.showProducts = async (req, res) => {
   const products = await Product.find();
 
   res.render('productView.ejs', {
@@ -63,7 +63,7 @@ const showProducts = async (req, res) => {
   });
 };
 
-const removeProduct = async (req, res) => {
+exports.removeProduct = async (req, res) => {
   const id = req.params.id;
   const user = await User.findOne({ _id: req.user.user._id });
 
@@ -80,7 +80,7 @@ const removeProduct = async (req, res) => {
   }
 };
 
-const editProduct = async (req, res) => {
+exports.editProduct = async (req, res) => {
   const id = req.params.id;
   const user = await User.findOne({ _id: req.user.user._id });
   const adminProducts = await user.productList;
@@ -98,7 +98,7 @@ const editProduct = async (req, res) => {
   }
 };
 
-const postEdit = async (req, res) => {
+exports.postEdit = async (req, res) => {
   const id = req.params.id;
 
   try {
@@ -117,14 +117,4 @@ const postEdit = async (req, res) => {
     console.log(err);
     res.redirect('/addProduct');
   }
-};
-
-module.exports = {
-  addProductForm,
-  addProductFormSubmit,
-  showAdminProducts,
-  showProducts,
-  removeProduct,
-  editProduct,
-  postEdit,
 };
