@@ -560,6 +560,85 @@ body {
   .loginContainer .loginLinks {
     font-family: "Open Sans", sans-serif; }
 
+.wishListContainer {
+  background-color: #e9e6d9;
+  font-family: "Open Sans", sans-serif; }
+  .wishListContainer .wishListHeadline {
+    padding: 10px;
+    font-size: 2em; }
+  .wishListContainer .wishListProductList {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center; }
+    .wishListContainer .wishListProductList .wishListProductCard {
+      flex: 1 1 50%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background: none;
+      display: flex;
+      flex-direction: column;
+      width: 100%; }
+      @media screen and (min-width: 1024px) {
+        .wishListContainer .wishListProductList .wishListProductCard {
+          flex: 1 1 30%; } }
+      .wishListContainer .wishListProductList .wishListProductCard .wishListProductName {
+        font-weight: bold;
+        padding: 10px; }
+      .wishListContainer .wishListProductList .wishListProductCard .wishListProductImage {
+        padding: 10px; }
+      .wishListContainer .wishListProductList .wishListProductCard .wishListPrice {
+        padding: 10px; }
+      .wishListContainer .wishListProductList .wishListProductCard .wishListProductDescription {
+        display: none;
+        width: 25%;
+        padding: 10px; }
+      .wishListContainer .wishListProductList .wishListProductCard .show {
+        display: block; }
+      .wishListContainer .wishListProductList .wishListProductCard .wishListDescriptionButton {
+        width: 25%;
+        margin: 10px 10px;
+        border: 1px solid #9b9999;
+        font-family: "Open Sans", sans-serif;
+        height: 25px;
+        font-size: 14px;
+        padding: 0 9px;
+        border-radius: 4px; }
+        .wishListContainer .wishListProductList .wishListProductCard .wishListDescriptionButton:hover {
+          background: #807864;
+          border-radius: 5%; }
+      .wishListContainer .wishListProductList .wishListProductCard .wishListQuantityInput {
+        width: 10%;
+        margin: 10px 0px;
+        border: 1px solid #c2c2c2;
+        font-family: "Open Sans", sans-serif;
+        height: 32px;
+        font-size: 14px;
+        padding: 0 9px;
+        border-radius: 7px; }
+      .wishListContainer .wishListProductList .wishListProductCard .wishListAddToCartButton {
+        border: 1px solid #9b9999;
+        font-family: "Open Sans", sans-serif;
+        height: 25px;
+        font-size: 14px;
+        padding: 0 9px;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 20px;
+        background: none;
+        border: none;
+        height: 40px; }
+        .wishListContainer .wishListProductList .wishListProductCard .wishListAddToCartButton:hover {
+          background: #807864;
+          border-radius: 5%; }
+      .wishListContainer .wishListProductList .wishListProductCard .fa-trash {
+        padding: 10px;
+        color: black; }
+        .wishListContainer .wishListProductList .wishListProductCard .fa-trash:hover {
+          background: #807864; }
+
 .registerResetContainer {
   display: flex;
   flex-direction: column;
