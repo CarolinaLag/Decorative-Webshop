@@ -2,6 +2,9 @@ const User = require('../model/user');
 const Cart = require('../model/cart');
 require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const nodemailer = require('nodemailer');
+const sgMail = require('@sendgrid/mail');
+var sgTransport = require('nodemailer-sendgrid-transport');
 
 const checkout = async (req, res) => {
   const user = await User.findOne({ _id: req.user.user._id });
@@ -40,6 +43,16 @@ const checkout = async (req, res) => {
   }
 };
 
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+var options = {
+  auth: {
+    api_key: process.env.SENDGRID_API_KEY,
+  },
+};
+
+var transport = nodemailer.createTransport(sgTransport(options));
+
 const shoppingSuccess = async (req, res) => {
   const user = await User.findOne({ _id: req.user.user._id });
   const userId = user;
@@ -50,6 +63,13 @@ const shoppingSuccess = async (req, res) => {
     await cart.save();
     res.render('successMessage.ejs', {
       user: user,
+    });
+
+    await transport.sendMail({
+      from: process.env.USER,
+      to: user.email,
+      subject: 'Purchase confirmation',
+      html: `<h2>Thank you for shopping at Decorative, your items are on the way. </h2>`,
     });
   } catch (error) {
     console.log(error);
