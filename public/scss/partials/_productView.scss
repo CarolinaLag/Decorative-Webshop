@@ -61,8 +61,27 @@
       .productPageImage {
         padding: 10px;
       }
+      
+      .productPageDescription {
+        display: none;
+        padding: 10px;
+      }
+      .show {
+        display: block;
+      }
+      .priceHeartSection {
+        display: flex;
+        flex-direction: row;
+      .productPagePrice {
+        padding: 10px;
+      }
       .heartSection {
-        margin-left: 10%;
+        margin-left:5%;
+        margin-top: 3%;
+        @include desktop {
+        margin-left: 6%;
+        margin-top: 2%;
+      }
         .far {
           font-size: 20px;
           color: black;
@@ -73,16 +92,7 @@
           }
         }
       }
-      .productPageDescription {
-        display: none;
-        padding: 10px;
-      }
-      .show {
-        display: block;
-      }
-      .productPagePrice {
-        padding: 10px;
-      }
+    }
       .readMoreBtnSection {
         padding: 5px;
         .readMoreBtn {
@@ -124,6 +134,7 @@
             transform: scale(1.5);
           }
         }
+        
       }
     }
   }

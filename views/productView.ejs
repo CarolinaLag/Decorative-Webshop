@@ -13,13 +13,15 @@
   <%- include("menu.ejs")%>
   <section class="productPageContainer">
 
-    <%- include("message.ejs")%>
+   
 
 <div class="productLinkContainer">
         <a class="productpageLink" href="/addProduct">Add Products</a>
       </div>
         <h3 class="productHeading">Our Products</h3>
         <%- include("./sortProducts.ejs") %>
+
+        <%- include("message.ejs")%>
 
         <ul class="productPageList">
         <% products.forEach( product=> { %>
@@ -30,16 +32,18 @@
             </div>
             <div class="productPageImage">
               <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
-                alt="Could not upload image" height="200px" width="100px" />
+                alt="Could not upload image" height="200px" width="200px" />
             </div>
 
-            <div class="heartSection">
-              <a class="productHeartBtn" href="/wishlist/<%= product._id %>"><i class="far fa-heart"></i></a>
-            </div>
-
+            
+<div class="priceHeartSection">
             <div class="productPagePrice">
               <%= product.price + "kr" %>
             </div>
+            <div class="heartSection">
+              <a class="productHeartBtn" href="/wishlist/<%= product._id %>"><i class="far fa-heart"></i></a>
+            </div>
+          </div>
           <div class="readMoreBtnSection">
             <button class="readMoreBtn" value="<%= product._id %>" onclick="showDescription(this.value)">
               Läs mer
@@ -56,6 +60,7 @@
                 <input class="productPageInput" type="text" name="productId" id="" value="<%= product._id %>" hidden>
                 <input class="productPageInput" type="number" name="price" id="" value="<%= product.price %>" hidden>
                 <button class="productCartBtn" type="submit"><i class="fas fa-shopping-cart"></i></button>
+                
               </form>
 
               
