@@ -29,6 +29,14 @@
             <div>
               <%= product.price %>
             </div>
+
+            <button value="<%= product._id %>" onclick="showDescription(this.value)">
+              Läs mer
+            </button>
+            
+            <div class="productDescription" id="<%= product._id %>">
+              <%= product.description %>
+            </div>
             <div>
               <form action="/addToCart" method="post">
                 <input type="text" name="name" id="" value="<%= product.name %>" hidden>

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login</title>
 
+
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
   <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
@@ -13,6 +14,7 @@
 
 <body>
   <%- include("menu.ejs")%>
+
     <div class="loginContainer">
       <h2 class="loginHeadline">Login</h2>
 
@@ -26,18 +28,24 @@
             <input type="email" name="email" class="loginInput" id="" placeholder="email" />
             <input type="password" name="password" class="loginInput" id="" placeholder="password" />
 
-            <button type class="loginBtn"="submit">
-              <i class="far fa-user loginBtnContent"></i><span class="loginBtnContent">Login</span>
-            </button>
-          </form>
-          <div class="loginLinks">
-            <span>Don't have an account?</span>
-            <a href="/register">Register</a>
-          </div>
-          <div class="loginLinks">
-            <span>Forgot your password?</span>
-            <a href="/reset">Reset Password</a>
-          </div>
+
+        <button type class="loginBtn" ="submit">
+          <i class="far fa-user loginBtnContent"></i
+          ><span class="loginBtnContent">Login</span>
+        </button>
+      </form>
+      <div class="loginLinks">
+        <span>Don't have an account?</span>
+        <a href="/register">Register</a>
+      </div>
+      <div class="loginLinks">
+        <span>Forgot your password?</span>
+        <a href="/reset">Reset Password</a>
+      </div>
+      <div class="loginLinks">
+        <a href="/">Back to home</a>
+      </div>
+
     </div>
 </body>
 

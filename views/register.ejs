@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,22 +12,40 @@
   <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
 </head>
 
-<body>
-  <%- include("menu.ejs")%>
+
+  <body>
     <div class="registerResetContainer">
       <h2 class="registerResetHeadline">Register</h2>
-      <%- include("message")%>
-        <form action="/register" method="post" class="registerResetForm">
-          <input class="registerResetInput" type="text" name="name" placeholder="your name" />
-          <input class="registerResetInput" type="email" name="email" placeholder="email" />
-          <input class="registerResetInput" type="password" name="password" placeholder="password" />
-          <button class="registerResetButton" type="submit">Register</button>
-        </form>
-        <div class="registerResetLink">
-          <span>Already registered? </span>
-          <a href="/login">Login</a>
+      <form action="/register" method="post" class="registerResetForm">
+        <input
+          class="registerResetInput"
+          type="text"
+          name="name"
+          placeholder="your name"
+        />
+        <input
+          class="registerResetInput"
+          type="email"
+          name="email"
+          placeholder="email"
+        />
+        <input
+          class="registerResetInput"
+          type="password"
+          name="password"
+          placeholder="password"
+        />
+        <button class="registerResetButton" type="submit">Register</button>
+      </form>
+      <div class="registerResetLink">
+        <span>Already registered? </span>
+        <a href="/login">Login</a>
+        <%- include("message")%>
+      </div>
+      <div class="registerResetLink">
+        <a href="/">Back to home</a>
+      </div>
 
-        </div>
     </div>
 </body>
 
