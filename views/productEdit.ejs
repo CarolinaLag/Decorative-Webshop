@@ -28,6 +28,7 @@
           method="post"
           enctype="multipart/form-data"
         >
+        <div class="inputSection">
           <input
             class="productAdminInput"
             type="text"
@@ -61,13 +62,14 @@
             value="<%= product.price %>"
           />
           <input class="productAdminInput" type="file" name="image" required />
-
+        </div>
           <button class="check" type="submit">
             <span class="fas fa-check-square fa-lg"></span>
           </button>
           <a href="/addProduct" class="regret"
             ><span class="fas fa-window-close fa-lg"></span
           ></a>
+        
         </form>
         <% } else { %>
         <li class="adminProductListItem">

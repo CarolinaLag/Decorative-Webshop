@@ -18,6 +18,10 @@
         border-radius: 7px;
         margin-top: 5px;
       }
+      .inputSection {
+        display: flex;
+        flex-direction: column;
+      }
       .check {
         font-size: 20px;
         padding: 5px;
@@ -55,7 +59,7 @@
     flex-wrap: wrap;
     justify-content: center;
       .adminProductListItem {
-        flex: 1 1 30%;
+        flex: 1 1 50%;
         padding: 10px;
         margin-top: 10px;
         border: none;
@@ -64,6 +68,9 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        @include desktop {
+          flex: 1 1 30%;
+        }
         .productAdminName {
             font-weight: bold;
             padding:10px;
