@@ -8,6 +8,7 @@ body {
   font-family: 'Open sans', sans-serif;
   max-width: 960px;
   margin: 0 auto;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,6 +54,9 @@ body {
       font-size: 1.2em;
       text-decoration: none;
       margin-bottom: 10px;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     .continue-link {
       color: black;

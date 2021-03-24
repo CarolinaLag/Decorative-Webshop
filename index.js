@@ -51,7 +51,7 @@ mongoose.connect(process.env.DATABASE_URL, options, (err) => {
     console.log(err);
     return;
   }
-  app.listen(process.env.PORT || 8000, () => {
+  app.listen(process.env.PORT || 8001, () => {
     console.log('App is running');
   });
 });

@@ -58,6 +58,8 @@
       }
     }
     .payment-btn {
+      @include buttonStyle;
+
       margin: 20px 0;
     }
   }
