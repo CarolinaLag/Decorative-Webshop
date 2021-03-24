@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
   </head>
   <body>
-    <%- include("menu.ejs")%>
     <div class="registerResetContainer">
       <h2 class="registerResetHeadline">Register</h2>
       <form action="/register" method="post" class="registerResetForm">
@@ -44,6 +43,9 @@
         <span>Already registered? </span>
         <a href="/login">Login</a>
         <%- include("message")%>
+      </div>
+      <div class="registerResetLink">
+        <a href="/">Back to home</a>
       </div>
     </div>
   </body>
