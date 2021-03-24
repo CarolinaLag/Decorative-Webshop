@@ -1,20 +1,17 @@
+@import "partials/menu";
+@import "partials/reset";
+@import "partials/home";
+@import "partials/cart";
+@import "partials/checkout";
+@import "partials/productView";
 
-@import 'partials/menu';
-@import 'partials/reset';
-@import 'partials/home';
-@import 'partials/cart';
-@import 'partials/checkout';
-@import 'partials/productView';
-
-@import '../scss/partials/messages';
-@import 'util/mixins';
-@import 'partials/adminProductView';
-
+@import "../scss/partials/messages";
+@import "util/mixins";
+@import "partials/adminProductView";
+@import "partials/successPage";
 @import "partials/login";
 
 @import "partials/register";
 @import "../scss/partials/messages";
 
 @import "partials/footer.scss";
-
-
