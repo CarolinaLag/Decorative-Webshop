@@ -283,11 +283,117 @@ body {
       border-radius: 4px;
       margin: 20px 0; }
 
-.productDescription {
-  display: none; }
-
-.show {
-  display: block; }
+.productPageContainer {
+  font-family: "Open Sans", sans-serif; }
+  .productPageContainer .productLinkContainer {
+    padding: 10px; }
+    .productPageContainer .productLinkContainer .productpageLink {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      opacity: 0.7;
+      padding: 5px; }
+      .productPageContainer .productLinkContainer .productpageLink:hover {
+        background: #807864;
+        border-radius: 5px; }
+  .productPageContainer .productHeading {
+    padding: 10px;
+    font-size: 2em; }
+  .productPageContainer .sortLinks {
+    padding: 10px; }
+    .productPageContainer .sortLinks .sort {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      opacity: 0.7;
+      padding: 5px; }
+      .productPageContainer .sortLinks .sort:hover {
+        background: #807864;
+        border-radius: 5px; }
+  .productPageContainer .productPageList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .productPageContainer .productPageList .productPageListItem {
+      flex: 1 1 50%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background: none;
+      display: flex;
+      flex-direction: column;
+      width: 100%; }
+      @media screen and (min-width: 1024px) {
+        .productPageContainer .productPageList .productPageListItem {
+          flex: 1 1 30%; } }
+      .productPageContainer .productPageList .productPageListItem .productPageName {
+        font-weight: bold;
+        padding: 10px; }
+      .productPageContainer .productPageList .productPageListItem .productPageImage {
+        padding: 10px; }
+      .productPageContainer .productPageList .productPageListItem .heartSection {
+        margin-left: 10%; }
+        .productPageContainer .productPageList .productPageListItem .heartSection .far {
+          font-size: 20px;
+          color: black;
+          transition: 0.5s all ease-in-out; }
+          .productPageContainer .productPageList .productPageListItem .heartSection .far:hover {
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5); }
+      .productPageContainer .productPageList .productPageListItem .productPageDescription {
+        display: none;
+        padding: 10px; }
+      .productPageContainer .productPageList .productPageListItem .show {
+        display: block; }
+      .productPageContainer .productPageList .productPageListItem .productPagePrice {
+        padding: 10px; }
+      .productPageContainer .productPageList .productPageListItem .readMoreBtnSection {
+        padding: 5px; }
+        .productPageContainer .productPageList .productPageListItem .readMoreBtnSection .readMoreBtn {
+          text-decoration: none;
+          font-weight: bold;
+          color: black;
+          opacity: 0.7;
+          padding: 5px;
+          border-radius: 5%;
+          cursor: pointer; }
+          .productPageContainer .productPageList .productPageListItem .readMoreBtnSection .readMoreBtn:hover {
+            background: #807864;
+            border-radius: 5px; }
+      .productPageContainer .productPageList .productPageListItem .productPageForm {
+        padding: 10px; }
+        .productPageContainer .productPageList .productPageListItem .productPageForm .productPageInput {
+          border: 1px solid #c2c2c2;
+          height: 32px;
+          font-size: 14px;
+          padding: 0 9px;
+          border-radius: 7px;
+          margin-top: 5px;
+          width: 55px; }
+        .productPageContainer .productPageList .productPageListItem .productPageForm .productCartBtn {
+          font-size: 20px;
+          padding: 10px;
+          border: none;
+          background: none;
+          cursor: pointer; }
+        .productPageContainer .productPageList .productPageListItem .productPageForm .fas {
+          transition: 0.5s all ease-in-out; }
+          .productPageContainer .productPageList .productPageListItem .productPageForm .fas:hover {
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5); }
+  .productPageContainer .pagination {
+    padding: 10px; }
+    .productPageContainer .pagination .page {
+      text-decoration: none;
+      font-weight: 600;
+      color: black;
+      opacity: 0.7;
+      padding: 5px; }
+      .productPageContainer .pagination .page:hover {
+        background-color: #807864;
+        border-radius: 5px; }
 
 .message {
   font-family: 'Open sans', sans-serif;
