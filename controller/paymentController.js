@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer');
 const sgMail = require('@sendgrid/mail');
 var sgTransport = require('nodemailer-sendgrid-transport');
 
-const checkout = async (req, res) => {
+exports.checkout = async (req, res) => {
   const user = await User.findOne({ _id: req.user.user._id });
   const userId = user;
   const cart = await Cart.findOne({ userId });
@@ -53,7 +53,7 @@ var options = {
 
 var transport = nodemailer.createTransport(sgTransport(options));
 
-const shoppingSuccess = async (req, res) => {
+exports.shoppingSuccess = async (req, res) => {
   const user = await User.findOne({ _id: req.user.user._id });
   const userId = user;
   const cart = await Cart.findOne({ userId });
@@ -74,9 +74,4 @@ const shoppingSuccess = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-};
-
-module.exports = {
-  checkout,
-  shoppingSuccess,
 };
