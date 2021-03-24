@@ -1,44 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
 
-  <body>
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+</head>
+
+<body>
+  <%- include("menu.ejs")%>
+
     <div class="loginContainer">
       <h2 class="loginHeadline">Login</h2>
 
       <% if (err) { %>
-      <p class="loginErr"><%= err %></p>
-      <% } %> <%- include("message.ejs")%>
+        <p class="loginErr">
+          <%= err %>
+        </p>
+        <% } %>
 
-      <form action="/login" method="post" class="loginForm">
-        <input
-          type="email"
-          name="email"
-          class="loginInput"
-          id=""
-          placeholder="email"
-        />
-        <input
-          type="password"
-          name="password"
-          class="loginInput"
-          id=""
-          placeholder="password"
-        />
+          <form action="/login" method="post" class="loginForm">
+            <input type="email" name="email" class="loginInput" id="" placeholder="email" />
+            <input type="password" name="password" class="loginInput" id="" placeholder="password" />
+
 
         <button type class="loginBtn" ="submit">
           <i class="far fa-user loginBtnContent"></i
@@ -56,6 +45,8 @@
       <div class="loginLinks">
         <a href="/">Back to home</a>
       </div>
+
     </div>
-  </body>
+</body>
+
 </html>

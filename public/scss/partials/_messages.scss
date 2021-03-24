@@ -1,12 +1,19 @@
 @import '../util/variables';
 
 .message {
-  color: black;
   font-family: 'Open sans', sans-serif;
   margin-bottom: 10px;
   padding: 10px;
+  width: 250px;
+  text-align: center;
+  color: black;
+  background-color: $bg-color;
+  opacity: 0.8;
+
 }
 
 .warning_message {
   color: $warning-msg;
+  width: 250px;
+  margin-bottom: 10px;
 }
