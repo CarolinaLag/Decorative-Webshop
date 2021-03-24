@@ -50,7 +50,7 @@
     var stripe = Stripe(
       "pk_test_51ILliiBRbWPcHLxe7D73iKWi40Ne50lYQCULNORVICGOovVU4qbcUJcJyGfmEWpr5qMlR7mGwsxh3P0EyOvlHhxX00GrkJbzN2"
     );
-    document.querySelector(".checkout").addEventListener("click", () => {
+    document.querySelector(".payment-btn").addEventListener("click", () => {
       stripe.redirectToCheckout({ sessionId: "<%=sessionId %>" });
     });
   </script>
