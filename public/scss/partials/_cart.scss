@@ -4,15 +4,11 @@ body {
   background-color: $bg-color;
 }
 .cart-wrapper {
-  // border: 1px solid;
   font-family: 'Open sans', sans-serif;
   max-width: 960px;
   margin: 0 auto;
   height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexColCenter;
   #cart-heading {
     margin: 40px 0;
   }
@@ -45,8 +41,7 @@ body {
   }
   .cart-links {
     margin-top: 30px;
-    display: flex;
-    flex-direction: column;
+    @include flexCol;
     text-align: center;
 
     .checkout-link {

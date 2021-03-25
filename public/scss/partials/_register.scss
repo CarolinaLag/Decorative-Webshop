@@ -3,8 +3,7 @@
 @import "../util/variables";
 
 .registerResetContainer {
-  display: flex;
-  flex-direction: column;
+ @include flexCol;
   padding-top: 10%;
   align-items: center;
   background-color: $bg-color;
@@ -15,8 +14,7 @@
     font-family: "Open Sans", sans-serif;
   }
   .registerResetForm {
-    display: flex;
-    flex-direction: column;
+    @include flexCol;
     width: 270px;
     .registerResetInput {
       @include inputStyle;
@@ -34,6 +32,33 @@
   .registerResetLink {
     font-family: "Open Sans", sans-serif;
     text-align: center;
+    padding: 10px;
+    .registerLoginBtn {
+      padding:10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      opacity: 0.7;
+      padding: 5px;
+      &:hover {
+        background: $hover-bg-color;
+        border-radius: 5px;
+      }
+    }
+  }
+  .registerResetLink {
+    padding: 10px;
+    .registerBackHomeBtn {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      opacity: 0.7;
+      padding: 5px;
+      &:hover {
+        background: $hover-bg-color;
+        border-radius: 5px;
+      }
+    }
   }
   .loginErr {
     font-family: "Open Sans", sans-serif;

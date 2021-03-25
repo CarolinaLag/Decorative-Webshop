@@ -2,8 +2,7 @@
 @import "../util/variables";
 
 .loginContainer {
-  display: flex;
-  flex-direction: column;
+  @include flexCol;
   padding-top: 10%;
   align-items: center;
   background-color: $bg-color;
@@ -20,8 +19,7 @@
     color: red !important;
   }
   .loginForm {
-    display: flex;
-    flex-direction: column;
+    @include flexCol;
     width: 270px;
     .loginInput {
       @include inputStyle;

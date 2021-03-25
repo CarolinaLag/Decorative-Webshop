@@ -26,3 +26,23 @@
     border-radius: 5%;
   }
 }
+
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@mixin flexColCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+

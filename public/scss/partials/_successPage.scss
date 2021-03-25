@@ -1,7 +1,5 @@
 .successContainer {
-  display: flex;
-  flex-direction: column;
-
+  @include flexCol;
   padding-top: 10%;
   align-items: center;
   background-color: $bg-color;
