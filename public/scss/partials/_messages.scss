@@ -1,7 +1,7 @@
-@import '../util/variables';
+@import "../util/variables";
 
 .message {
-  font-family: 'Open sans', sans-serif;
+  font-family: "Open sans", sans-serif;
   margin-bottom: 10px;
   padding: 10px;
   margin: 5px;
@@ -14,7 +14,14 @@
 }
 
 .warning_message {
-  color: $warning-msg;
+  font-family: "Open sans", sans-serif;
   width: 250px;
   margin-bottom: 10px;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  color: black;
+  background-color: $warning-msg;
+  border-radius: 5px;
+  opacity: 0.8;
 }
