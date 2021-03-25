@@ -569,8 +569,6 @@ body {
     font-family: "Open Sans", sans-serif; }
 
 .wishListContainer {
-  display: flex;
-  flex-direction: column;
   background-color: #e9e6d9;
   font-family: "Open Sans", sans-serif; }
   .wishListContainer .wishListHeadline {
