@@ -18,10 +18,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexColCenter;
   #checkout-heading {
     margin-bottom: 40px;
   }
@@ -47,8 +44,7 @@
     font-size: 1.5em;
   }
   .checkout-links {
-    display: flex;
-    flex-direction: column;
+    @include flexCol;
     .cart-link {
       color: black;
       font-size: 0.8em;
@@ -59,7 +55,6 @@
     }
     .payment-btn {
       @include buttonStyle;
-
       margin: 20px 0;
     }
   }

@@ -144,7 +144,6 @@
       color: #e9e6d9;
       background: black;
       opacity: 0.7;
-      border-radius: 50%;
       font-family: 'Dancing Script', cursive; }
       .homeSection .showProductsContainer .showProductsLink:hover {
         opacity: 0.5; }
@@ -598,8 +597,8 @@ body {
   .wishListContainer .wishListProductList {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center; }
+    justify-content: center;
+    flex-direction: row; }
     .wishListContainer .wishListProductList .wishListProductCard {
       flex: 1 1 50%;
       padding: 10px;
@@ -719,7 +718,29 @@ body {
         border-radius: 5%; }
   .registerResetContainer .registerResetLink {
     font-family: "Open Sans", sans-serif;
-    text-align: center; }
+    text-align: center;
+    padding: 10px; }
+    .registerResetContainer .registerResetLink .registerLoginBtn {
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      opacity: 0.7;
+      padding: 5px; }
+      .registerResetContainer .registerResetLink .registerLoginBtn:hover {
+        background: #807864;
+        border-radius: 5px; }
+  .registerResetContainer .registerResetLink {
+    padding: 10px; }
+    .registerResetContainer .registerResetLink .registerBackHomeBtn {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      opacity: 0.7;
+      padding: 5px; }
+      .registerResetContainer .registerResetLink .registerBackHomeBtn:hover {
+        background: #807864;
+        border-radius: 5px; }
   .registerResetContainer .loginErr {
     font-family: "Open Sans", sans-serif;
     color: red !important; }
