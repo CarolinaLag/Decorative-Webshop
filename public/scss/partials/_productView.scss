@@ -3,7 +3,10 @@
 
 .productPageContainer {
   font-family: "Open Sans", sans-serif;
-
+  padding: 0 5px 0 5px;
+  @include desktop {
+    padding-left: 40px;
+  }
   .productLinkContainer {
     padding: 10px;
     .productpageLink {
@@ -60,6 +63,18 @@
       }
       .productPageImage {
         padding: 10px;
+        img {
+        object-fit: cover;
+        transition: transform 0.25s ease;
+        &:hover {
+          -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+          @include desktop {
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+          }
+        }
+        }
       }
       
       .productPageDescription {
