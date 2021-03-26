@@ -1,10 +1,10 @@
-const User = require('../model/user');
-const Cart = require('../model/cart');
-require('dotenv').config();
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const nodemailer = require('nodemailer');
-const sgMail = require('@sendgrid/mail');
-var sgTransport = require('nodemailer-sendgrid-transport');
+const User = require("../model/user");
+const Cart = require("../model/cart");
+require("dotenv").config();
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const nodemailer = require("nodemailer");
+const sgMail = require("@sendgrid/mail");
+var sgTransport = require("nodemailer-sendgrid-transport");
 
 exports.checkout = async (req, res) => {
   const user = await User.findOne({ _id: req.user.user._id });
@@ -13,26 +13,26 @@ exports.checkout = async (req, res) => {
 
   try {
     if (!cart.products || cart.products.length <= 0) {
-      req.flash('warning_msg', 'Your cart is empty.');
-      return res.redirect('/products');
+      req.flash("warning_msg", "Your cart is empty.");
+      return res.redirect("/products");
     }
 
     const session = await stripe.checkout.sessions.create({
-      success_url: 'http://localhost:8000/shoppingSuccess',
-      cancel_url: 'http://localhost:8000/checkout',
-      payment_method_types: ['card'],
-      billing_address_collection: 'required',
+      success_url: "http://localhost:8000/shoppingSuccess",
+      cancel_url: "http://localhost:8000/checkout",
+      payment_method_types: ["card"],
+      billing_address_collection: "required",
       line_items: cart.products.map((product) => {
         return {
           name: product.name,
           amount: product.price * 100,
           quantity: product.quantity,
-          currency: 'sek',
+          currency: "sek",
         };
       }),
-      mode: 'payment',
+      mode: "payment",
     });
-    res.render('checkout.ejs', {
+    res.render("checkout.ejs", {
       cartItems: cart.products,
       totalPrice: cart.totalPrice,
       sessionId: session.id,
@@ -61,14 +61,14 @@ exports.shoppingSuccess = async (req, res) => {
     cart.products = [];
     cart.totalPrice = 0;
     await cart.save();
-    res.render('successMessage.ejs', {
+    res.render("successMessage.ejs", {
       user: user,
     });
 
     await transport.sendMail({
-      from: process.env.USER,
+      from: process.env.USER_EMAIL,
       to: user.email,
-      subject: 'Purchase confirmation',
+      subject: "Purchase confirmation",
       html: `<h2>Thank you for shopping at Decorative, your items are on the way. </h2>`,
     });
   } catch (error) {
