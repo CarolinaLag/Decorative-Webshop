@@ -34,16 +34,9 @@
         color: rgb(223, 43, 43);
       }
     .subBtn {
-        border-radius: 5%;
-        cursor: pointer;
-        padding: 10px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-left: 5px;
-        &:hover {
-          background: $hover-bg-color;
-          border-radius: 5%;
-        }
+        @include buttonStyle;
+        height: 35px;
+        margin-left: 15px;
         .fas {
             font-size: 15px;
         }

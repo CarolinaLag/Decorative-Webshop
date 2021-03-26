@@ -35,5 +35,15 @@
   }
   .loginLinks {
     font-family: "Open Sans", sans-serif;
+    padding:10px;
+    .loginRegisterLink {
+     @include linkStyle;
+    }
+    .resetPassLink {
+      @include linkStyle;
+    }
+    .backHomeLink {
+      @include linkStyle;
+    }
   }
 }

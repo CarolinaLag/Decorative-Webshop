@@ -46,12 +46,7 @@
   .checkout-links {
     @include flexCol;
     .cart-link {
-      color: black;
-      font-size: 0.8em;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
+     @include cartLinkStyle;
     }
     .payment-btn {
       @include buttonStyle;

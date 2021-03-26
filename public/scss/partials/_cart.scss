@@ -45,22 +45,10 @@ body {
     text-align: center;
 
     .checkout-link {
-      color: black;
-      font-size: 1.2em;
-      text-decoration: none;
-      margin-bottom: 10px;
-      &:hover {
-        text-decoration: underline;
-      }
+      @include cartLinkStyle;
     }
     .continue-link {
-      color: black;
-      font-size: 0.8em;
-      text-decoration: none;
-      &:hover {
-        cursor: pointer;
-        text-decoration: underline;
-      }
+     @include cartLinkStyle;
     }
   }
 }
