@@ -1,0 +1,49 @@
+@import "../util/mixins";
+@import "../util/variables";
+
+.loginContainer {
+  @include flexCol;
+  padding-top: 10%;
+  align-items: center;
+  background-color: $bg-color;
+  height: 100vh;
+  width: 100vw;
+
+  .loginHeadline {
+    margin-bottom: 1%;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .loginErr {
+    font-family: "Open Sans", sans-serif;
+    color: red !important;
+  }
+  .loginForm {
+    @include flexCol;
+    width: 270px;
+    .loginInput {
+      @include inputStyle;
+      margin: 5px 0px;
+    }
+    .loginBtn {
+      @include buttonStyle;
+      margin: 5px 0px;
+      .loginBtnContent {
+        padding: 0px 3px;
+      }
+    }
+  }
+  .loginLinks {
+    font-family: "Open Sans", sans-serif;
+    padding:10px;
+    .loginRegisterLink {
+     @include linkStyle;
+    }
+    .resetPassLink {
+      @include linkStyle;
+    }
+    .backHomeLink {
+      @include linkStyle;
+    }
+  }
+}

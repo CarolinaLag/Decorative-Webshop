@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+  </head>
+
+  <body>
+    <div class="registerResetContainer">
+      <h2 class="registerResetHeadline">Register</h2>
+      <% if (err) { %>
+      <p class="loginErr"><%= err %></p>
+      <% } %>
+      <form action="/register" method="post" class="registerResetForm">
+        <input
+          class="registerResetInput"
+          type="text"
+          name="name"
+          placeholder="your name"
+        />
+        <input
+          class="registerResetInput"
+          type="email"
+          name="email"
+          placeholder="email"
+        />
+        <input
+          class="registerResetInput"
+          type="password"
+          name="password"
+          placeholder="password"
+        />
+        <button class="registerResetButton" type="submit">Register</button>
+      </form>
+      <div class="registerResetLink">
+        <span>Already registered? </span>
+        <a class="registerLoginBtn" href="/login">Login</a>
+      </div>
+      <div class="registerResetLink">
+        <a class="registerBackHomeBtn" href="/">Back to home</a>
+      </div>
+    </div>
+  </body>
+</html>

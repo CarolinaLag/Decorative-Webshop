@@ -1,0 +1,56 @@
+@import '../util/variables';
+.wrapper {
+  background-image: url('../images/living-room.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+}
+
+.checkout-container {
+  font-family: 'Open sans', sans-serif;
+  background-color: $bg-color;
+  opacity: 0.9;
+  width: 70%;
+  margin: 0 auto;
+  padding: 40px 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include flexColCenter;
+  #checkout-heading {
+    margin-bottom: 40px;
+  }
+  .checkout-product-container {
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    @include desktop() {
+      width: 70%;
+    }
+    padding: 10px 0;
+    margin-bottom: 10px;
+    .checkout-item {
+      margin: 4px 0;
+      text-align: center;
+      flex: 1;
+    }
+  }
+  .checkout-total {
+    margin-top: 20px;
+    font-size: 1.5em;
+  }
+  .checkout-links {
+    @include flexCol;
+    .cart-link {
+     @include cartLinkStyle;
+    }
+    .payment-btn {
+      @include buttonStyle;
+      margin: 20px 0;
+    }
+  }
+}

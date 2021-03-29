@@ -1,0 +1,16 @@
+<div class="pagination">
+ 
+  <% if(typeof totalPages !== undefined ) { %>
+    <% if(totalPages !== dataToShow/taskPerReq) { %>
+   
+
+  <a href="/products/?page=<%=(dataToShow/taskPerReq)+1%>&&sorted=<%=sorted%>" class="page"
+    >Next <i class="fas fa-arrow-alt-circle-right"></i></a>
+
+  <% } if(page >= 2) { %>
+
+  <a href="/products/?page=<%=(dataToShow/taskPerReq)-1%>&&sorted=<%=sorted%>" class="page"
+    >Back <i class="fas fa-arrow-alt-circle-left"></i></a>
+
+  <% }} %>
+</div>

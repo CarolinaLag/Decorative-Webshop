@@ -1,0 +1,84 @@
+@import "../util/mixins";
+@import "../util/variables";
+
+.wishListContainer {
+  background-color: $bg-color;
+  font-family: "Open Sans", sans-serif;
+
+  .wishListHeadline {
+    padding: 10px;
+    font-size: 2em;
+  }
+
+  .wishListProductList {
+   @include flexWrap;
+    flex-direction: row;
+    .wishListProductCard {
+      flex: 1 1 50%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background: none;
+     @include flexCol;
+      width: 100%;
+      @include desktop {
+        flex: 1 1 30%;
+      }
+      .wishListProductName {
+        font-weight: bold;
+        padding: 10px;
+      }
+      .wishListProductImage {
+        padding: 10px;
+      }
+      .wishListPrice {
+        padding: 10px;
+      }
+      .wishListProductDescription {
+        display: none;
+        width: 25%;
+        padding: 10px;
+      }
+      .show {
+        display: block;
+      }
+      .wishListDescriptionButton {
+        width: 100px;
+        margin: 10px 10px;
+        cursor: pointer;
+        @include buttonStyle;
+        &:hover {
+          background: $hover-bg-color;
+          border-radius: 5%;
+        }
+      }
+      .wishListQuantityInput {
+        width: 60px;
+        margin: 10px 0px;
+        @include inputStyle;
+      }
+      .wishListAddToCartButton {
+        @include buttonStyle;
+        padding: 10px;
+        font-size: 20px;
+        background: none;
+        border: none;
+        height: 40px;
+        cursor: pointer;
+        &:hover {
+          background: $hover-bg-color;
+          border-radius: 5%;
+        }
+      }
+      .fa-trash {
+        padding: 10px;
+        color: black;
+        &:hover {
+          background: $hover-bg-color;
+          border-radius: 5%;
+        }
+      }
+    }
+  }
+}

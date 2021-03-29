@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decorative</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="successContainer">
+      <h2 class="successHeadline">
+        Thank you for shopping at Decorative, <%= user.name %>!
+      </h2>
+
+      <span class="successText"
+        >We've recived your order, and your new Decorative products will soon be
+        with you!</span
+      >
+      <span class="successText"
+        >Check your email for all the details regarding your purchase</span
+      >
+
+      <span class="successText"
+        >Forgot something? <a href="/products">Back to products</a></span
+      >
+    </div>
+  </body>
+</html>

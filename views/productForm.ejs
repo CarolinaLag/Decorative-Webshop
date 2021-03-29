@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+  </head>
+
+  <body>
+    <%- include("menu.ejs")%>
+
+    <section class="adminContainer">
+      <p class="message">Hi! You are logged in as: <%=user.name%></p>
+
+      <%-include("message.ejs")%>
+
+      <h2 class="addProductHeading">Add Products</h2>
+
+      <% if (err) { %>
+
+      <p class="addProductErr"><%= err %></p>
+      <% } %>
+
+      <form
+        action="/addProduct"
+        class="productAdminForm"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input
+          class="productAdminInput"
+          type="text"
+          name="name"
+          placeholder="name"
+          id=""
+        />
+        <input
+          class="productAdminInput"
+          type="text"
+          name="description"
+          placeholder="description"
+          id=""
+        />
+        <input
+          class="productAdminInput"
+          type="number"
+          name="price"
+          placeholder="price"
+          id=""
+        />
+        <input
+          class="productAdminInput"
+          type="file"
+          name="image"
+          placeholder="image"
+          id=""
+          required
+        />
+
+        <button class="subBtn" type="submit">
+          <span class="fas fa-plus"></span>
+        </button>
+      </form>
+
+      <h2 class="adminListHeading">Admin Productlist</h2>
+      <ul class="adminProductList">
+        <% products.forEach( product=> { %>
+        <li class="adminProductListItem">
+          <div class="productAdminName"><%= product.name %></div>
+          <div class="productAdminImage">
+            <img
+              src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+              alt="Could not upload image"
+              height="200px"
+              width="200px"
+            />
+          </div>
+          <div class="productAdminDescription"><%= product.description %></div>
+
+          <div class="productAdminPrice"><%= product.price + "kr" %></div>
+          <div class="editDeleteSection">
+            <a href="/addProduct/edit/<%= product._id %>" class="edit"
+              ><span class="fas fa-edit"></span
+            ></a>
+            <a href="/addProduct/remove/<%= product._id %>" class="remove">
+              <span class="fas fa-trash"></span>
+            </a>
+          </div>
+        </li>
+        <% }) %>
+      </ul>
+    </section>
+    <%- include("footer.ejs")%>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+//Register + Reset password
+@import "../util/mixins";
+@import "../util/variables";
+
+.registerResetContainer {
+ @include flexCol;
+  padding-top: 10%;
+  align-items: center;
+  background-color: $bg-color;
+  height: 100vh;
+  width: 100vw;
+  .registerResetHeadline {
+    margin-bottom: 1%;
+    font-family: "Open Sans", sans-serif;
+  }
+  .registerResetForm {
+    @include flexCol;
+    width: 270px;
+    .registerResetInput {
+      @include inputStyle;
+      margin: 5px 0px;
+    }
+    .resetErr {
+      font-family: "Open Sans", sans-serif;
+      color: red;
+    }
+    .registerResetButton {
+      @include buttonStyle;
+      margin: 5px 0px;
+    }
+  }
+  .registerResetLink {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    padding: 10px;
+    .registerLoginBtn {
+      padding:10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      opacity: 0.7;
+      padding: 5px;
+      &:hover {
+        background: $hover-bg-color;
+        border-radius: 5px;
+      }
+    }
+  }
+  .registerResetLink {
+    padding: 10px;
+    .registerBackHomeBtn {
+     @include linkStyle;
+    }
+    .backHomeLink {
+      @include linkStyle;
+    }
+    .resetMailLink {
+      @include linkStyle;
+    }
+  }
+  .loginErr {
+    font-family: "Open Sans", sans-serif;
+    color: red !important;
+  }
+}

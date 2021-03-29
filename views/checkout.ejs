@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="/static/style/style.css" type="text/css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="checkout-container">
+      <h1 id="checkout-heading">Checkout</h1>
+
+      <% if (cartItems.lenght==0 ) { %>
+        <span>Your cart is empty. <a href="/products">Back to product page</a></span>
+        <% } %>
+          <% cartItems.forEach( cartItem=> { %>
+            <div class="checkout-product-container">
+              <div class="checkout-item">
+                <%= cartItem.name %>
+              </div>
+              <div class="checkout-item">
+                <%= cartItem.quantity%> st
+              </div>
+              <div class="checkout-item">
+                <%= cartItem.price %> kr
+              </div>
+              <div class="checkout-item">Subtotal: <%= cartItem.subtotal %> kr
+              </div>
+
+            </div>
+            <% }) %>
+              <div class="checkout-total">
+                <p>Total price: <%= totalPrice%> kr
+                </p>
+              </div>
+              <div class="checkout-links">
+                <button class="payment-btn" type="submit">To payment</button>
+                <a href="/showShoppingCart" class="cart-link">&LeftArrow; Back to cart</a>
+              </div>
+    </div>
+  </div>
+
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <script>
+    var stripe = Stripe(
+      "pk_test_51ILliiBRbWPcHLxe7D73iKWi40Ne50lYQCULNORVICGOovVU4qbcUJcJyGfmEWpr5qMlR7mGwsxh3P0EyOvlHhxX00GrkJbzN2"
+    );
+    document.querySelector(".payment-btn").addEventListener("click", () => {
+      stripe.redirectToCheckout({ sessionId: "<%=sessionId %>" });
+    });
+  </script>
+</body>
+
+</html>
