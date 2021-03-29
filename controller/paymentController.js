@@ -18,8 +18,8 @@ exports.checkout = async (req, res) => {
     }
 
     const session = await stripe.checkout.sessions.create({
-      success_url: "http://localhost:8000/shoppingSuccess",
-      cancel_url: "http://localhost:8000/checkout",
+      success_url: "https://decorative-webshop.herokuapp/shoppingSuccess",
+      cancel_url: "https://decorative-webshop.herokuapp/checkout",
       payment_method_types: ["card"],
       billing_address_collection: "required",
       line_items: cart.products.map((product) => {
