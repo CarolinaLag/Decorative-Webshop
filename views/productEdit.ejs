@@ -21,7 +21,7 @@
       <ul class="adminProductList">
         <%- include("message.ejs")%> <% products.forEach( product=> { %> <% if
         (product._id==idProduct) { %>
-
+<li class="adminProductListItem">
         <form
           action="/addProduct/edit/<%= product._id %>"
           class="productAdminForm"
@@ -75,6 +75,7 @@
             ><span class="fas fa-window-close fa-lg"></span
           ></a>
         </form>
+      </li>
         <% } else { %>
         <li class="adminProductListItem">
           <div class="productAdminName"><%= product.name %></div>
