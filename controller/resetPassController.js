@@ -37,7 +37,7 @@ exports.resetSubmit = async (req, res) => {
       from: process.env.USER_EMAIL,
       to: user.email,
       subject: "Reset password requested",
-      html: `<h2> Click  <a href="https://decorative-webshop.herokuapp/reset/${user.token}" > here </a> to reset the password </h2>`,
+      html: `<h2> Click  <a href="https://decorative-webshop.herokuapp.com/reset/${user.token}" > here </a> to reset the password </h2>`,
     });
     res.render("resetMail.ejs", { err: err });
   } catch (err) {
