@@ -1,10 +1,10 @@
-@import '../util/variables';
-@import '../util/mixins';
+@import "../util/variables";
+@import "../util/mixins";
 body {
   background-color: $bg-color;
 }
 .cart-wrapper {
-  font-family: 'Open sans', sans-serif;
+  font-family: "Open sans", sans-serif;
   max-width: 960px;
   margin: 0 auto;
   height: 70vh;
@@ -46,9 +46,11 @@ body {
 
     .checkout-link {
       @include cartLinkStyle;
+      font-size: 1.5em;
     }
     .continue-link {
-     @include cartLinkStyle;
+      @include cartLinkStyle;
+      font-size: 1em;
     }
   }
 }
