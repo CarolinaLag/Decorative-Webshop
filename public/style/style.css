@@ -170,7 +170,7 @@ body {
   background-color: #e9e6d9; }
 
 .cart-wrapper {
-  font-family: 'Open sans', sans-serif;
+  font-family: "Open sans", sans-serif;
   max-width: 960px;
   margin: 0 auto;
   height: 70vh;
@@ -210,14 +210,16 @@ body {
     .cart-wrapper .cart-links .checkout-link {
       color: black;
       font-size: 0.8em;
-      text-decoration: none; }
+      text-decoration: none;
+      font-size: 1.5em; }
       .cart-wrapper .cart-links .checkout-link:hover {
         cursor: pointer;
         text-decoration: underline; }
     .cart-wrapper .cart-links .continue-link {
       color: black;
       font-size: 0.8em;
-      text-decoration: none; }
+      text-decoration: none;
+      font-size: 1em; }
       .cart-wrapper .cart-links .continue-link:hover {
         cursor: pointer;
         text-decoration: underline; }
