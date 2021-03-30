@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run watch-code & npm run watch-css",
+    "start": "node index.js",
     "watch-code": "nodemon index.js",
     "watch-css": "node-sass -w public/scss -o public/style",
     "test": "echo \"Error: no test specified\" && exit 1"
