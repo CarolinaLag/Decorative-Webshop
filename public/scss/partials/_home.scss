@@ -4,7 +4,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 100vh;
+  height: 100%;
+  @include desktop {
+    height: 100vh;
+  }
+
   .loginLinkContainer {
     background-color: black;
     opacity: 0.7;
@@ -42,14 +46,17 @@
         font-family: 'Dancing Script', cursive;
         font-size: 25px;
       }
-     
     }
   }
   .showProductsContainer {
-    margin: 25px;
+    @include desktop {
+      margin: 25px;
+    }
+    padding-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+
     .showProductsLink {
       padding: 15px;
       text-decoration: none;
@@ -86,6 +93,5 @@
         font-size: 30px;
       }
     }
-    
   }
 }

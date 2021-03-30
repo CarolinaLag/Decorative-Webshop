@@ -7,7 +7,7 @@
   .navbar .menu-btn {
     display: none; }
     .navbar .menu-btn:checked ~ .menu {
-      max-height: 320px; }
+      max-height: 350px; }
     .navbar .menu-btn:checked ~ .menu-icon .navicon {
       background: transparent; }
       .navbar .menu-btn:checked ~ .menu-icon .navicon:before {
@@ -37,7 +37,7 @@
       .navbar .menu-icon .navicon:before {
         background: white;
         border-radius: 3px;
-        content: "";
+        content: '';
         display: block;
         height: 100%;
         position: absolute;
@@ -47,7 +47,7 @@
       .navbar .menu-icon .navicon:after {
         background: white;
         border-radius: 3px;
-        content: "";
+        content: '';
         display: block;
         height: 100%;
         position: absolute;
@@ -74,7 +74,7 @@
       text-decoration: none;
       color: white;
       font-size: 18px;
-      font-family: "Open Sans", sans-serif;
+      font-family: 'Open Sans', sans-serif;
       font-size: 1.2rem;
       font-weight: 600;
       color: white;
@@ -97,7 +97,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 100vh; }
+  height: 100%; }
+  @media screen and (min-width: 1024px) {
+    .homeSection {
+      height: 100vh; } }
   .homeSection .loginLinkContainer {
     background-color: black;
     opacity: 0.7;
@@ -130,10 +133,13 @@
         font-family: 'Dancing Script', cursive;
         font-size: 25px; }
   .homeSection .showProductsContainer {
-    margin: 25px;
+    padding-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center; }
+    @media screen and (min-width: 1024px) {
+      .homeSection .showProductsContainer {
+        margin: 25px; } }
     .homeSection .showProductsContainer .showProductsLink {
       padding: 15px;
       text-decoration: none;
