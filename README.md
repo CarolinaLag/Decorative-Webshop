@@ -16,6 +16,9 @@ Examples of functionality of the Webshop is:
 - Payment service integration with Stripe
 - Products, user/admin, wishlist and cartlist is reflected in MongoDB.
 
+<img width="521" alt="Picture of Decorative Webshop Landingpage" src="https://user-images.githubusercontent.com/69104443/116054210-bc94f900-a67b-11eb-969d-0f6e38a8f007.png" />
+<img width="521" alt="Picture of Decorative products" src="https://user-images.githubusercontent.com/69104443/116054247-c4549d80-a67b-11eb-82ba-43264dd12df9.png" />
+
 ---
 
 ## Demo
