@@ -18,6 +18,13 @@ Examples of functionality of the Webshop is:
 
 ---
 
+## Demo
+To see the Decorative Webshop live go to:
+
+https://decorative-webshop.herokuapp.com/
+
+---
+
 ## Installation
 Use following command to install:
 
