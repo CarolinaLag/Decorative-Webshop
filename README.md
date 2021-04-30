@@ -2,6 +2,13 @@
 
 _A home decor webshop that offer beautiful and practical objects_
 
+## Demo
+To see the Decorative Webshop live go to:
+
+https://decorative-webshop.herokuapp.com/
+
+---
+
 Examples of functionality of the Webshop is:
 
 - Register new user/admin
@@ -18,13 +25,6 @@ Examples of functionality of the Webshop is:
 
 <img width="521" alt="Picture of Decorative Webshop Landingpage" src="https://user-images.githubusercontent.com/69104443/116054210-bc94f900-a67b-11eb-969d-0f6e38a8f007.png" />
 <img width="521" alt="Picture of Decorative products" src="https://user-images.githubusercontent.com/69104443/116054247-c4549d80-a67b-11eb-82ba-43264dd12df9.png" />
-
----
-
-## Demo
-To see the Decorative Webshop live go to:
-
-https://decorative-webshop.herokuapp.com/
 
 ---
 
